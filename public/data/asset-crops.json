@@ -1,0 +1,145 @@
+{
+  "old": [
+    {
+      "id": "old_01",
+      "src": "/assets/old-city/memory-01.webp"
+    },
+    {
+      "id": "old_02",
+      "src": "/assets/old-city/memory-02.webp"
+    },
+    {
+      "id": "old_03",
+      "src": "/assets/old-city/memory-03.webp"
+    },
+    {
+      "id": "old_04",
+      "src": "/assets/old-city/memory-04.webp"
+    },
+    {
+      "id": "old_05",
+      "src": "/assets/old-city/memory-05.webp"
+    },
+    {
+      "id": "old_06",
+      "src": "/assets/old-city/memory-06.webp"
+    },
+    {
+      "id": "old_07",
+      "src": "/assets/old-city/memory-07.webp"
+    },
+    {
+      "id": "old_08",
+      "src": "/assets/old-city/memory-08.webp"
+    },
+    {
+      "id": "old_09",
+      "src": "/assets/old-city/memory-09.webp"
+    },
+    {
+      "id": "old_10",
+      "src": "/assets/old-city/memory-10.webp"
+    },
+    {
+      "id": "old_11",
+      "src": "/assets/old-city/memory-11.webp"
+    },
+    {
+      "id": "old_12",
+      "src": "/assets/old-city/memory-12.webp"
+    },
+    {
+      "id": "old_13",
+      "src": "/assets/old-city/memory-13.webp"
+    },
+    {
+      "id": "old_14",
+      "src": "/assets/old-city/memory-14.webp"
+    },
+    {
+      "id": "old_15",
+      "src": "/assets/old-city/memory-15.webp"
+    },
+    {
+      "id": "old_16",
+      "src": "/assets/old-city/memory-16.webp"
+    },
+    {
+      "id": "old_17",
+      "src": "/assets/old-city/memory-17.webp"
+    },
+    {
+      "id": "old_18",
+      "src": "/assets/old-city/memory-18.webp"
+    },
+    {
+      "id": "old_19",
+      "src": "/assets/old-city/memory-19.webp"
+    },
+    {
+      "id": "old_20",
+      "src": "/assets/old-city/memory-20.webp"
+    },
+    {
+      "id": "old_21",
+      "src": "/assets/old-city/memory-21.webp"
+    },
+    {
+      "id": "old_22",
+      "src": "/assets/old-city/memory-22.webp"
+    },
+    {
+      "id": "old_23",
+      "src": "/assets/old-city/memory-23.webp"
+    },
+    {
+      "id": "old_24",
+      "src": "/assets/old-city/memory-24.webp"
+    },
+    {
+      "id": "old_25",
+      "src": "/assets/old-city/old-01.webp"
+    }
+  ],
+  "modern": [
+    {
+      "id": "modern_01",
+      "src": "/assets/new-city/25cd8e17-4eff-4db8-a83c-9e9f1a6cc820.webp"
+    },
+    {
+      "id": "modern_02",
+      "src": "/assets/new-city/7cfa6337-dfd2-429f-be06-ae37f2dce37f.webp"
+    },
+    {
+      "id": "modern_03",
+      "src": "/assets/new-city/发现了一个深圳最冷门的citywalk地点👆_2_Amanecer en Tequila_来自小红书网页版.webp"
+    },
+    {
+      "id": "modern_04",
+      "src": "/assets/new-city/城中村的视界_1_💤💤_来自小红书网页版.webp"
+    },
+    {
+      "id": "modern_05",
+      "src": "/assets/new-city/深圳2004年：第一城的未来主义_12_豹师傅_来自小红书网页版.webp"
+    },
+    {
+      "id": "modern_06",
+      "src": "/assets/new-city/深圳2004年：第一城的未来主义_2_豹师傅_来自小红书网页版.webp"
+    },
+    {
+      "id": "modern_07",
+      "src": "/assets/new-city/深圳2004年：第一城的未来主义_4_豹师傅_来自小红书网页版.webp"
+    },
+    {
+      "id": "modern_08",
+      "src": "/assets/new-city/深圳2019_2_BOBO_来自小红书网页版.webp"
+    }
+  ],
+  "ui": {
+    "title_graphic": "/assets/backgrounds/logo.webp",
+    "wake_button_normal": "/assets/buttons/wake_button_normal.webp",
+    "wake_button_hover": "/assets/buttons/wake_button_hover.webp",
+    "paper2": "/assets/backgrounds/paper2.webp",
+    "fence": "/assets/barrier/围挡/Group 38.webp"
+  }
+}

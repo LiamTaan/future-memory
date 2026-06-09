@@ -1,0 +1,1977 @@
+[
+  {
+    "id": "memory-01",
+    "src": "/assets/aigen-old/memory-01.webp",
+    "title": "红砖旧楼",
+    "memory": "红砖楼的阳台一层层叠着，墙面和栏杆都被时间晒得发暗。每次抬头看见它，都会想起旧城里那些没有电梯、却很热闹的下午。",
+    "author": "by 匿名上传",
+    "date": "2026.5.18",
+    "tags": [
+      "红砖楼",
+      "阳台",
+      "旧城",
+      "楼房",
+      "街边"
+    ],
+    "mood": "朦胧",
+    "era": "童年",
+    "type": "place",
+    "defaultPosition": {
+      "x": 12.0,
+      "y": 18.0,
+      "rotation": -2
+    },
+    "depth": 0.18,
+    "createdAt": 1717600000000
+  },
+  {
+    "id": "memory-02",
+    "src": "/assets/aigen-old/memory-02.webp",
+    "title": "河边小路",
+    "memory": "河岸边的水很浅，白色的鸟停在远处，路边的花把这段记忆照得很亮。那不是某个具体事件，只是一条回家路上会被反复想起的风景。",
+    "author": "by 匿名上传",
+    "date": "2026.5.19",
+    "tags": [
+      "河边",
+      "小路",
+      "白鸟",
+      "花坛",
+      "晴天"
+    ],
+    "mood": "安静",
+    "era": "童年",
+    "type": "place",
+    "defaultPosition": {
+      "x": 26.0,
+      "y": 22.0,
+      "rotation": -1
+    },
+    "depth": 0.18,
+    "createdAt": 1717600008000
+  },
+  {
+    "id": "memory-03",
+    "src": "/assets/aigen-old/memory-03.webp",
+    "title": "旧园门口",
+    "memory": "灰砖门洞被树影盖住，门楣上的字已经有些褪色。小时候经过这里，总觉得门里面藏着另一段更安静的时间。",
+    "author": "by 匿名上传",
+    "date": "2026.5.20",
+    "tags": [
+      "园门",
+      "灰砖",
+      "树影",
+      "旧墙",
+      "入口"
+    ],
+    "mood": "温柔",
+    "era": "童年",
+    "type": "interior",
+    "defaultPosition": {
+      "x": 39.0,
+      "y": 16.0,
+      "rotation": 0
+    },
+    "depth": 0.2,
+    "createdAt": 1717600016000
+  },
+  {
+    "id": "memory-04",
+    "src": "/assets/aigen-old/memory-04.webp",
+    "title": "斑驳老楼",
+    "memory": "树枝挡在老楼前面，墙面上的水痕和裂缝像旧照片里留下来的纹路。它不热闹，但很像城市还没更新之前的样子。",
+    "author": "by 匿名上传",
+    "date": "2026.5.21",
+    "tags": [
+      "老楼",
+      "树枝",
+      "斑驳",
+      "墙面",
+      "旧城"
+    ],
+    "mood": "热闹",
+    "era": "小学",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 55.0,
+      "y": 20.0,
+      "rotation": 1
+    },
+    "depth": 0.3,
+    "createdAt": 1717600024000
+  },
+  {
+    "id": "memory-05",
+    "src": "/assets/aigen-old/memory-05.webp",
+    "title": "白墙老屋",
+    "memory": "白墙和小窗被树荫围着，房子安静得像被临时保留下来。后来再想起它，记忆里只剩下屋顶边缘和那片亮得发白的墙。",
+    "author": "by 匿名上传",
+    "date": "2026.5.22",
+    "tags": [
+      "白墙",
+      "老屋",
+      "小窗",
+      "树荫",
+      "屋顶"
+    ],
+    "mood": "空旷",
+    "era": "童年",
+    "type": "place",
+    "defaultPosition": {
+      "x": 69.0,
+      "y": 17.0,
+      "rotation": 2
+    },
+    "depth": 0.4,
+    "createdAt": 1717600032000
+  },
+  {
+    "id": "memory-06",
+    "src": "/assets/aigen-old/memory-06.webp",
+    "title": "砖墙旧门",
+    "memory": "旧砖墙边的门洞被藤蔓和杂草围住，像一扇很久没人打开的门。走近的时候，会闻到潮湿墙面和植物混在一起的味道。",
+    "author": "by 匿名上传",
+    "date": "2026.5.23",
+    "tags": [
+      "砖墙",
+      "旧门",
+      "藤蔓",
+      "院子",
+      "潮湿"
+    ],
+    "mood": "怀旧",
+    "era": "童年",
+    "type": "interior",
+    "defaultPosition": {
+      "x": 84.0,
+      "y": 20.0,
+      "rotation": 3
+    },
+    "depth": 0.5,
+    "createdAt": 1717600040000
+  },
+  {
+    "id": "memory-07",
+    "src": "/assets/aigen-old/memory-07.webp",
+    "title": "铁皮屋顶",
+    "memory": "蓝色铁皮搭在旧楼之间，边缘压着电线和晾晒的东西。雨天经过这里时，雨声会在铁皮上变得特别响。",
+    "author": "by 匿名上传",
+    "date": "2026.5.24",
+    "tags": [
+      "铁皮",
+      "屋顶",
+      "旧楼",
+      "电线",
+      "雨声"
+    ],
+    "mood": "清淡",
+    "era": "校园",
+    "type": "school",
+    "defaultPosition": {
+      "x": 16.0,
+      "y": 36.0,
+      "rotation": -2
+    },
+    "depth": 0.6,
+    "createdAt": 1717600048000
+  },
+  {
+    "id": "memory-08",
+    "src": "/assets/aigen-old/memory-08.webp",
+    "title": "树荫街道",
+    "memory": "整条路都被树冠遮住，阳光从叶子缝里落下来。这里像一段被城市藏起来的慢镜头，走过去时脚步也会放轻。",
+    "author": "by 匿名上传",
+    "date": "2026.5.25",
+    "tags": [
+      "树荫",
+      "街道",
+      "绿叶",
+      "阳光",
+      "慢走"
+    ],
+    "mood": "潮湿",
+    "era": "童年",
+    "type": "building",
+    "defaultPosition": {
+      "x": 31.0,
+      "y": 39.0,
+      "rotation": -1
+    },
+    "depth": 0.7,
+    "createdAt": 1717600056000
+  },
+  {
+    "id": "memory-09",
+    "src": "/assets/aigen-old/memory-09.webp",
+    "title": "夜晚便利店",
+    "memory": "便利店的红色招牌在夜里很亮，门口摆着几张塑料凳。那种灯光和街边声音混在一起，像放学后还不想回家的短暂停留。",
+    "author": "by 匿名上传",
+    "date": "2026.5.26",
+    "tags": [
+      "便利店",
+      "夜晚",
+      "招牌",
+      "塑料凳",
+      "街边"
+    ],
+    "mood": "遥远",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 46.0,
+      "y": 34.0,
+      "rotation": 0
+    },
+    "depth": 0.8,
+    "createdAt": 1717600064000
+  },
+  {
+    "id": "memory-10",
+    "src": "/assets/aigen-old/memory-10.webp",
+    "title": "斑驳墙角",
+    "memory": "墙面上的黑色水痕一路往下，木门和白墙都显得很旧。它像一处没人特意记住的角落，却在回忆里留下了清楚的纹理。",
+    "author": "by 匿名上传",
+    "date": "2026.5.27",
+    "tags": [
+      "墙角",
+      "木门",
+      "斑驳",
+      "旧墙",
+      "水痕"
+    ],
+    "mood": "安静",
+    "era": "童年",
+    "type": "park",
+    "defaultPosition": {
+      "x": 62.0,
+      "y": 37.0,
+      "rotation": 1
+    },
+    "depth": 0.9,
+    "createdAt": 1717600072000
+  },
+  {
+    "id": "memory-11",
+    "src": "/assets/old-city/memory-11.webp",
+    "title": "井盖落叶",
+    "memory": "湿掉的井盖上贴着几片落叶，金属纹路把雨后的地面变得很清楚。小时候低头走路时，总会记住这些不起眼的小东西。",
+    "author": "by 匿名上传",
+    "date": "2026.5.28",
+    "tags": [
+      "井盖",
+      "落叶",
+      "雨后",
+      "地面",
+      "纹理"
+    ],
+    "mood": "微亮",
+    "era": "旧城",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 78.0,
+      "y": 35.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600080000
+  },
+  {
+    "id": "memory-12",
+    "src": "/assets/old-city/memory-12.webp",
+    "title": "肠粉店招牌",
+    "memory": "红色招牌上写着肠粉店，字很直接，也很有生活气。这样的店名常常比建筑更容易留下来，一看见就会想起早饭的热气。",
+    "author": "by 匿名上传",
+    "date": "2026.5.29",
+    "tags": [
+      "招牌",
+      "肠粉店",
+      "早餐",
+      "街边",
+      "红字"
+    ],
+    "mood": "冷静",
+    "era": "旧城",
+    "type": "building",
+    "defaultPosition": {
+      "x": 90.0,
+      "y": 39.0,
+      "rotation": 3
+    },
+    "depth": 0.92,
+    "createdAt": 1717600088000
+  },
+  {
+    "id": "memory-13",
+    "src": "/assets/aigen-old/memory-13.webp",
+    "title": "旧楼背面",
+    "memory": "旧楼背面的窗和管线都露在外面，阳光只照到一小块墙。这里没有正门那么体面，却更像真正被人住过的地方。",
+    "author": "by 匿名上传",
+    "date": "2026.5.30",
+    "tags": [
+      "旧楼",
+      "背面",
+      "窗户",
+      "管线",
+      "墙面"
+    ],
+    "mood": "模糊",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 10.0,
+      "y": 54.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600096000
+  },
+  {
+    "id": "memory-14",
+    "src": "/assets/aigen-old/memory-14.webp",
+    "title": "河滩白鸟",
+    "memory": "一群白鸟停在浅水边，远处的河面平得像没有声音。这样的画面很容易被新的城市遮住，但一想起它，空气还是亮的。",
+    "author": "by 匿名上传",
+    "date": "2026.5.31",
+    "tags": [
+      "河滩",
+      "白鸟",
+      "浅水",
+      "远处",
+      "晴天"
+    ],
+    "mood": "温暖",
+    "era": "童年",
+    "type": "interior",
+    "defaultPosition": {
+      "x": 25.0,
+      "y": 56.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600104000
+  },
+  {
+    "id": "memory-15",
+    "src": "/assets/aigen-old/memory-15.webp",
+    "title": "旧街远景",
+    "tags": [
+      "远景",
+      "街道",
+      "楼群",
+      "路口",
+      "旧城"
+    ],
+    "mood": "遥远",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 40.0,
+      "y": 52.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600112000
+  },
+  {
+    "id": "memory-16",
+    "src": "/assets/aigen-old/memory-16.webp",
+    "title": "老街店面",
+    "memory": "旧楼底下挤着一排店面，招牌、窗户和阳台层层叠在一起。这里的生活痕迹太密了，反而让人很难忘掉。",
+    "author": "by 匿名上传",
+    "date": "2026.6.2",
+    "tags": [
+      "老街",
+      "店面",
+      "招牌",
+      "旧楼",
+      "街口"
+    ],
+    "mood": "轻快",
+    "era": "童年",
+    "type": "object",
+    "defaultPosition": {
+      "x": 56.0,
+      "y": 55.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600120000
+  },
+  {
+    "id": "memory-17",
+    "src": "/assets/aigen-old/memory-17.webp",
+    "title": "河边栏杆",
+    "memory": "河水贴着旧楼流过去，栏杆把画面分成一小格一小格。站在这里往外看，时间像是顺着水慢慢漂远。",
+    "author": "by 匿名上传",
+    "date": "2026.6.3",
+    "tags": [
+      "河边",
+      "栏杆",
+      "旧楼",
+      "水面",
+      "远望"
+    ],
+    "mood": "发呆",
+    "era": "旧城",
+    "type": "building",
+    "defaultPosition": {
+      "x": 72.0,
+      "y": 54.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600128000
+  },
+  {
+    "id": "memory-18",
+    "src": "/assets/aigen-old/memory-18.webp",
+    "title": "街市小路",
+    "memory": "窄窄的街市两边挤着店铺和摊位，雨棚、电线、招牌都贴得很近。走进去的时候，会觉得整条路都在说话。",
+    "author": "by 匿名上传",
+    "date": "2026.6.4",
+    "tags": [
+      "街市",
+      "小路",
+      "店铺",
+      "雨棚",
+      "招牌"
+    ],
+    "mood": "平静",
+    "era": "旧城",
+    "type": "building",
+    "defaultPosition": {
+      "x": 87.0,
+      "y": 56.0,
+      "rotation": 3
+    },
+    "depth": 0.92,
+    "createdAt": 1717600136000
+  },
+  {
+    "id": "memory-19",
+    "src": "/assets/aigen-old/memory-19.webp",
+    "title": "窄巷墙画",
+    "memory": "窄巷里有一面画着植物的旧墙，门和墙面都被岁月磨得发暗。它像一张贴在城市角落里的小纸条。",
+    "author": "by 匿名上传",
+    "date": "2026.6.5",
+    "tags": [
+      "窄巷",
+      "墙画",
+      "木门",
+      "旧墙",
+      "植物"
+    ],
+    "mood": "陈旧",
+    "era": "旧城",
+    "type": "texture",
+    "defaultPosition": {
+      "x": 14.0,
+      "y": 72.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600144000
+  },
+  {
+    "id": "memory-20",
+    "src": "/assets/aigen-old/memory-20.webp",
+    "title": "榕树门楼",
+    "memory": "大榕树把门楼遮住了一半，树根和墙面像一起长了很多年。这样的入口很安静，却很像旧城记忆的开头。",
+    "author": "by 匿名上传",
+    "date": "2026.6.6",
+    "tags": [
+      "榕树",
+      "门楼",
+      "旧墙",
+      "树荫",
+      "入口"
+    ],
+    "mood": "熟悉",
+    "era": "小学",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 30.0,
+      "y": 72.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600152000
+  },
+  {
+    "id": "memory-21",
+    "src": "/assets/aigen-old/memory-21.webp",
+    "title": "旧院墙边",
+    "memory": "水泥地、旧院墙和晾着的衣服都很安静，像是某个午后刚刚被人经过。墙上的字迹褪了色，却还留着日常生活的重量。",
+    "author": "by 匿名上传",
+    "date": "2026.6.7",
+    "tags": [
+      "院墙",
+      "晾衣",
+      "旧楼",
+      "水泥地",
+      "日常"
+    ],
+    "mood": "私密",
+    "era": "童年",
+    "type": "interior",
+    "defaultPosition": {
+      "x": 46.0,
+      "y": 72.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600160000
+  },
+  {
+    "id": "memory-22",
+    "src": "/assets/aigen-old/memory-22.webp",
+    "title": "夜色旧楼",
+    "memory": "夜里的旧楼一格一格亮着灯，楼下的招牌被雨和霓虹照得发红。那些窗口像许多段没有说完的生活。",
+    "author": "by 匿名上传",
+    "date": "2026.6.8",
+    "tags": [
+      "夜色",
+      "旧楼",
+      "灯光",
+      "招牌",
+      "窗口"
+    ],
+    "mood": "清冷",
+    "era": "校园",
+    "type": "school",
+    "defaultPosition": {
+      "x": 62.0,
+      "y": 72.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600168000
+  },
+  {
+    "id": "memory-23",
+    "src": "/assets/aigen-old/memory-23.webp",
+    "title": "黄昏操场",
+    "memory": "空操场被黄昏照得发亮，篮架的影子拖得很长。放学以后，人声散去，只剩下一块还带着温度的地面。",
+    "author": "by 匿名上传",
+    "date": "2026.6.9",
+    "tags": [
+      "操场",
+      "黄昏",
+      "球场",
+      "影子",
+      "放学"
+    ],
+    "mood": "夏天",
+    "era": "童年",
+    "type": "street",
+    "defaultPosition": {
+      "x": 78.0,
+      "y": 72.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600176000
+  },
+  {
+    "id": "memory-24",
+    "src": "/assets/aigen-old/memory-24.webp",
+    "title": "校门口栏杆",
+    "memory": "白色栏杆上系着红白色的带子，旁边是教室窗台和安静的墙面。这里不像校门那么热闹，却很像放学前后的等待。",
+    "author": "by 匿名上传",
+    "date": "2026.6.10",
+    "tags": [
+      "校门口",
+      "栏杆",
+      "红绳",
+      "窗台",
+      "等待"
+    ],
+    "mood": "热闹",
+    "era": "校园",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 90.0,
+      "y": 73.0,
+      "rotation": 3
+    },
+    "depth": 0.92,
+    "createdAt": 1717600184000
+  },
+  {
+    "id": "memory-25",
+    "src": "/assets/aigen-old/memory-25.webp",
+    "title": "路边纸飞机",
+    "memory": "彩色纸飞机落在路边的树影里，像刚刚从某个课间飞出来。它很小，却让整条旧路突然变得像童年的地面。",
+    "author": "by 匿名上传",
+    "date": "2026.6.11",
+    "tags": [
+      "纸飞机",
+      "路边",
+      "树影",
+      "童年",
+      "地面"
+    ],
+    "mood": "怀旧",
+    "era": "旧城",
+    "type": "building",
+    "defaultPosition": {
+      "x": 18.0,
+      "y": 88.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600192000
+  },
+  {
+    "id": "memory-26",
+    "src": "/assets/aigen-old/memory-26.webp",
+    "title": "树梢旧楼",
+    "memory": "树枝挡住远处的旧楼，天空很蓝，楼房只露出一小段。记忆里很多地方就是这样，被树叶遮着，却还能认出来。",
+    "author": "by 匿名上传",
+    "date": "2026.6.12",
+    "tags": [
+      "树梢",
+      "旧楼",
+      "天空",
+      "远处",
+      "枝叶"
+    ],
+    "mood": "开阔",
+    "era": "童年",
+    "type": "park",
+    "defaultPosition": {
+      "x": 34.0,
+      "y": 88.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600200000
+  },
+  {
+    "id": "memory-27",
+    "src": "/assets/aigen-old/memory-27.webp",
+    "title": "水枪脸盆",
+    "memory": "塑料水枪和红色脸盆放在湿地上，像刚结束的一场夏天游戏。那些亮色的小物件，比很多建筑更能把童年叫回来。",
+    "author": "by 匿名上传",
+    "date": "2026.6.13",
+    "tags": [
+      "水枪",
+      "脸盆",
+      "玩具",
+      "夏天",
+      "童年"
+    ],
+    "mood": "安稳",
+    "era": "旧城",
+    "type": "park",
+    "defaultPosition": {
+      "x": 50.0,
+      "y": 88.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600208000
+  },
+  {
+    "id": "memory-28",
+    "src": "/assets/aigen-old/memory-28.webp",
+    "title": "楼梯纸飞机",
+    "memory": "纸飞机停在楼梯拐角，旁边的扶手和墙面都很安静。它像一次没有飞远的玩耍，被留在楼道里很久。",
+    "author": "by 匿名上传",
+    "date": "2026.6.14",
+    "tags": [
+      "楼梯",
+      "纸飞机",
+      "扶手",
+      "楼道",
+      "童年"
+    ],
+    "mood": "日常",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 66.0,
+      "y": 88.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600216000
+  },
+  {
+    "id": "memory-29",
+    "src": "/assets/aigen-old/memory-29.webp",
+    "title": "玻璃弹珠",
+    "memory": "几颗玻璃弹珠散在地上，蓝色和绿色在光里很亮。它们太小了，却能把一整个课后的时间重新照出来。",
+    "author": "by 匿名上传",
+    "date": "2026.6.15",
+    "tags": [
+      "玻璃弹珠",
+      "地面",
+      "玩具",
+      "蓝色",
+      "课后"
+    ],
+    "mood": "幽静",
+    "era": "童年",
+    "type": "building",
+    "defaultPosition": {
+      "x": 82.0,
+      "y": 88.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600224000
+  },
+  {
+    "id": "memory-30",
+    "src": "/assets/aigen-old/memory-30.webp",
+    "title": "跳房子地面",
+    "memory": "粉笔画出的格子留在水泥地上，数字一格一格往前。就算没有人在跳，也能想起小朋友轮流等待的声音。",
+    "author": "by 匿名上传",
+    "date": "2026.6.16",
+    "tags": [
+      "跳房子",
+      "粉笔",
+      "水泥地",
+      "数字",
+      "游戏"
+    ],
+    "mood": "陈旧",
+    "era": "旧城",
+    "type": "building",
+    "defaultPosition": {
+      "x": 11.0,
+      "y": 10.0,
+      "rotation": 3
+    },
+    "depth": 0.92,
+    "createdAt": 1717600232000
+  },
+  {
+    "id": "memory-31",
+    "src": "/assets/aigen-old/memory-31.webp",
+    "title": "空地树影",
+    "memory": "空地上没有人，树影在水泥地上铺开。这样的地方常常什么都没发生，却最像童年里漫长的下午。",
+    "author": "by 匿名上传",
+    "date": "2026.6.17",
+    "tags": [
+      "空地",
+      "树影",
+      "水泥地",
+      "下午",
+      "安静"
+    ],
+    "mood": "冷淡",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 27.0,
+      "y": 12.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600240000
+  },
+  {
+    "id": "memory-32",
+    "src": "/assets/aigen-old/memory-32.webp",
+    "title": "树影跳绳",
+    "memory": "红色跳绳落在树影里，绳子绕成一个随意的圈。它像游戏结束后的暂停，风一吹，下午又继续往前走。",
+    "author": "by 匿名上传",
+    "date": "2026.6.18",
+    "tags": [
+      "跳绳",
+      "树影",
+      "空地",
+      "游戏",
+      "下午"
+    ],
+    "mood": "熟悉",
+    "era": "旧城",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 43.0,
+      "y": 11.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600248000
+  },
+  {
+    "id": "memory-33",
+    "src": "/assets/aigen-old/memory-33.webp",
+    "title": "蓝窗电视机",
+    "memory": "对面窗户里亮着蓝色电视光，整栋楼都安静下来。那一点光像晚饭前的信号，提醒人该回家了。",
+    "author": "by 匿名上传",
+    "date": "2026.6.19",
+    "tags": [
+      "电视机",
+      "窗户",
+      "蓝光",
+      "夜晚",
+      "回家"
+    ],
+    "mood": "匆忙",
+    "era": "校园",
+    "type": "school",
+    "defaultPosition": {
+      "x": 58.0,
+      "y": 12.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600256000
+  },
+  {
+    "id": "memory-34",
+    "src": "/assets/aigen-old/memory-34.webp",
+    "title": "收音机茶杯",
+    "memory": "茶杯和收音机放在桌上，旁边的窗光很轻。那种午后的声音不大，却会把房间里的时间拉得很长。",
+    "author": "by 匿名上传",
+    "date": "2026.6.20",
+    "tags": [
+      "收音机",
+      "茶杯",
+      "桌面",
+      "窗光",
+      "午后"
+    ],
+    "mood": "清爽",
+    "era": "童年",
+    "type": "street",
+    "defaultPosition": {
+      "x": 74.0,
+      "y": 11.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600264000
+  },
+  {
+    "id": "memory-35",
+    "src": "/assets/aigen-old/memory-35.webp",
+    "title": "雨后公交站",
+    "memory": "公交站牌和长椅被雨水洗得发亮，地面映着一点灰色的天。等车的时候，人会把很多小事都想一遍。",
+    "author": "by 匿名上传",
+    "date": "2026.6.21",
+    "tags": [
+      "公交站",
+      "雨后",
+      "长椅",
+      "站牌",
+      "等待"
+    ],
+    "mood": "破碎",
+    "era": "记忆",
+    "type": "texture",
+    "defaultPosition": {
+      "x": 88.0,
+      "y": 12.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600272000
+  },
+  {
+    "id": "memory-36",
+    "src": "/assets/aigen-old/memory-36.webp",
+    "title": "门口拖鞋",
+    "memory": "一双拖鞋放在门口，门里透出暖黄色的光。这样的细节太普通了，却最像真正住过的家。",
+    "author": "by 匿名上传",
+    "date": "2026.6.22",
+    "tags": [
+      "门口",
+      "拖鞋",
+      "家门",
+      "灯光",
+      "日常"
+    ],
+    "mood": "幽暗",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 18.0,
+      "y": 28.0,
+      "rotation": 3
+    },
+    "depth": 0.92,
+    "createdAt": 1717600280000
+  },
+  {
+    "id": "memory-37",
+    "src": "/assets/aigen-old/memory-37.webp",
+    "title": "晾衣楼下",
+    "memory": "几件衣服晾在楼下，旧楼的窗户和墙面在后面排开。风吹过来的时候，整片生活气息都会跟着动。",
+    "author": "by 匿名上传",
+    "date": "2026.6.23",
+    "tags": [
+      "晾衣",
+      "楼下",
+      "旧楼",
+      "衣服",
+      "生活"
+    ],
+    "mood": "放松",
+    "era": "童年",
+    "type": "park",
+    "defaultPosition": {
+      "x": 34.0,
+      "y": 29.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600288000
+  },
+  {
+    "id": "memory-38",
+    "src": "/assets/aigen-old/memory-38.webp",
+    "title": "厨房门帘",
+    "memory": "绿色花纹的门帘挡住厨房一角，后面有秤、桌子和旧物件。它让人想起家里那些被布帘隔开的日常空间。",
+    "author": "by 匿名上传",
+    "date": "2026.6.24",
+    "tags": [
+      "门帘",
+      "厨房",
+      "旧物",
+      "花纹",
+      "家里"
+    ],
+    "mood": "平淡",
+    "era": "旧城",
+    "type": "building",
+    "defaultPosition": {
+      "x": 50.0,
+      "y": 29.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600296000
+  },
+  {
+    "id": "memory-39",
+    "src": "/assets/aigen-old/memory-39.webp",
+    "title": "窗边作业本",
+    "memory": "打开的本子放在窗边，窗帘被风轻轻吹起来。那些写了一半的字，比很多照片更像学生时代的证明。",
+    "author": "by 匿名上传",
+    "date": "2026.6.25",
+    "tags": [
+      "作业本",
+      "窗边",
+      "窗帘",
+      "学生",
+      "书桌"
+    ],
+    "mood": "遥远",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 66.0,
+      "y": 29.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600304000
+  },
+  {
+    "id": "memory-40",
+    "src": "/assets/aigen-old/memory-40.webp",
+    "title": "楼下塑料凳",
+    "memory": "彩色塑料凳摆在树下，旁边是旧楼和自行车。有人坐过、聊过、等过，这片阴影才会变得这么熟悉。",
+    "author": "by 匿名上传",
+    "date": "2026.6.26",
+    "tags": [
+      "塑料凳",
+      "楼下",
+      "树荫",
+      "自行车",
+      "聊天"
+    ],
+    "mood": "清晰",
+    "era": "旧城",
+    "type": "landmark",
+    "defaultPosition": {
+      "x": 82.0,
+      "y": 29.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600312000
+  },
+  {
+    "id": "memory-41",
+    "src": "/assets/aigen-old/memory-41.webp",
+    "title": "旧屋饭桌",
+    "memory": "圆桌上还摆着碗筷和饭菜，木椅围在旁边。比起房间本身，更让人记住的是那种刚吃完饭的气味。",
+    "author": "by 匿名上传",
+    "date": "2026.6.27",
+    "tags": [
+      "饭桌",
+      "碗筷",
+      "木椅",
+      "旧屋",
+      "晚饭"
+    ],
+    "mood": "沉静",
+    "era": "旧城",
+    "type": "building",
+    "defaultPosition": {
+      "x": 12.0,
+      "y": 45.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600320000
+  },
+  {
+    "id": "memory-42",
+    "src": "/assets/aigen-old/memory-42.webp",
+    "title": "校园绿墙",
+    "memory": "校园楼前的绿墙爬满植物，梯子靠在一旁。这里不像教室那么明确，却装着很多课间和放学后的空白时间。",
+    "author": "by 匿名上传",
+    "date": "2026.6.28",
+    "tags": [
+      "校园",
+      "绿墙",
+      "梯子",
+      "植物",
+      "放学"
+    ],
+    "mood": "明亮",
+    "era": "学生时代",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 28.0,
+      "y": 46.0,
+      "rotation": 3
+    },
+    "depth": 0.92,
+    "createdAt": 1717600328000
+  },
+  {
+    "id": "memory-43",
+    "src": "/assets/aigen-old/memory-43.webp",
+    "title": "旧路门牌",
+    "memory": "蓝色门牌钉在斑驳墙上，数字和街道名都很清楚。城市更新以后，很多地址会变，但门牌还像在替旧路报出名字。",
+    "author": "by 匿名上传",
+    "date": "2026.6.29",
+    "tags": [
+      "门牌",
+      "旧路",
+      "墙面",
+      "数字",
+      "地址"
+    ],
+    "mood": "温热",
+    "era": "童年",
+    "type": "interior",
+    "defaultPosition": {
+      "x": 44.0,
+      "y": 46.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600336000
+  },
+  {
+    "id": "memory-44",
+    "src": "/assets/aigen-old/memory-44.webp",
+    "title": "雨天街口",
+    "memory": "雨水打在玻璃和路面上，街口的店招和红绿灯都被蒙上一层湿气。隔着雨看旧街，所有颜色都会变得更慢。",
+    "author": "by 匿名上传",
+    "date": "2026.6.30",
+    "tags": [
+      "雨天",
+      "街口",
+      "店招",
+      "玻璃",
+      "湿气"
+    ],
+    "mood": "发呆",
+    "era": "旧城",
+    "type": "building",
+    "defaultPosition": {
+      "x": 60.0,
+      "y": 46.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600344000
+  },
+  {
+    "id": "memory-45",
+    "src": "/assets/aigen-old/memory-45.webp",
+    "title": "潮湿墙角",
+    "memory": "墙角的红字已经褪掉，管线贴着潮湿的墙面往下走。它不是好看的地方，却很像旧城最真实的背面。",
+    "author": "by 匿名上传",
+    "date": "2026.7.1",
+    "tags": [
+      "墙角",
+      "管线",
+      "红字",
+      "潮湿",
+      "旧墙"
+    ],
+    "mood": "清凉",
+    "era": "童年",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 76.0,
+      "y": 46.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600352000
+  },
+  {
+    "id": "memory-46",
+    "src": "/assets/aigen-old/memory-46.webp",
+    "title": "雨中街铺",
+    "memory": "雨中的街铺半开着门，蓝色周转箱和卷帘门堆在一起。这样的街角总带着一点忙碌后的空荡。",
+    "author": "by 匿名上传",
+    "date": "2026.7.2",
+    "tags": [
+      "街铺",
+      "雨中",
+      "卷帘门",
+      "周转箱",
+      "街角"
+    ],
+    "mood": "日常",
+    "era": "童年",
+    "type": "object",
+    "defaultPosition": {
+      "x": 90.0,
+      "y": 46.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600360000
+  },
+  {
+    "id": "memory-47",
+    "src": "/assets/aigen-old/memory-47.webp",
+    "title": "车棚雨巷",
+    "memory": "车棚下停着自行车和电动车，地面被雨水打湿。这里像旧小区的侧门，平时很少被拍下，却每天都有人经过。",
+    "author": "by 匿名上传",
+    "date": "2026.7.3",
+    "tags": [
+      "车棚",
+      "雨巷",
+      "自行车",
+      "旧小区",
+      "经过"
+    ],
+    "mood": "空荡",
+    "era": "校园",
+    "type": "school",
+    "defaultPosition": {
+      "x": 20.0,
+      "y": 63.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600368000
+  },
+  {
+    "id": "memory-48",
+    "src": "/assets/aigen-old/memory-48.webp",
+    "title": "拆字楼门",
+    "memory": "旧楼门口被红线划过，墙上写着拆字。它像城市更新前最后留下的一张记号，提醒人这里曾经有人进出、上楼、回家。",
+    "author": "by 匿名上传",
+    "date": "2026.7.4",
+    "tags": [
+      "拆迁",
+      "楼门",
+      "红线",
+      "旧楼",
+      "回家"
+    ],
+    "mood": "失落",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 36.0,
+      "y": 63.0,
+      "rotation": 3
+    },
+    "depth": 0.92,
+    "createdAt": 1717600376000
+  },
+  {
+    "id": "memory-61",
+    "src": "/assets/aigen-old/memory-61.webp",
+    "title": "树边长椅",
+    "memory": "木质长椅像是刚从某个公园角落搬出来，扶手和椅面都带着旧旧的光。这样的座位总让人想起等人、发呆和放学后的短暂停留。",
+    "author": "by 匿名上传",
+    "date": "2026.7.5",
+    "tags": [
+      "长椅",
+      "树边",
+      "公园",
+      "木椅",
+      "等待"
+    ],
+    "mood": "安静",
+    "era": "童年",
+    "type": "object",
+    "defaultPosition": {
+      "x": 52.0,
+      "y": 64.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600384000
+  },
+  {
+    "id": "memory-64",
+    "src": "/assets/aigen-old/memory-64.webp",
+    "title": "旧铁门",
+    "memory": "金属门上的纹样和把手都很旧，像楼道尽头一扇每天都会被推开的门。它没有声音，却能让人想起回家时钥匙碰到门锁的瞬间。",
+    "author": "by 匿名上传",
+    "date": "2026.7.7",
+    "tags": [
+      "铁门",
+      "旧门",
+      "门锁",
+      "金属",
+      "楼道"
+    ],
+    "mood": "陈旧",
+    "era": "旧城",
+    "type": "object",
+    "defaultPosition": {
+      "x": 84.0,
+      "y": 64.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600400000
+  },
+  {
+    "id": "memory-68",
+    "src": "/assets/aigen-old/memory-68.webp",
+    "title": "老式风扇",
+    "memory": "房间角落里的落地风扇还对着床边，窗帘、木柜和夏天的光都停在一起。它像旧房间里最常被忽略的声音，转起来时整个午后都会慢下来。",
+    "author": "by 匿名上传",
+    "date": "2026.7.8",
+    "tags": [
+      "风扇",
+      "老式风扇",
+      "房间",
+      "夏天",
+      "窗边"
+    ],
+    "mood": "怀旧",
+    "era": "旧城",
+    "type": "object",
+    "defaultPosition": {
+      "x": 12.0,
+      "y": 80.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600404000
+  },
+  {
+    "id": "memory-79",
+    "src": "/assets/aigen-old/memory-79.webp",
+    "title": "旧书包文具盒",
+    "memory": "旧书包靠在窗边，课本和文具盒摊在桌上，红领巾也还没有收起来。它像一节课刚结束，空气里还留着粉笔和纸张的味道。",
+    "author": "by 匿名上传",
+    "date": "2026.7.8",
+    "tags": [
+      "旧书包",
+      "文具盒",
+      "课本",
+      "红领巾",
+      "窗边"
+    ],
+    "mood": "怀旧",
+    "era": "校园",
+    "type": "object",
+    "defaultPosition": {
+      "x": 24.0,
+      "y": 80.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600408000
+  },
+  {
+    "id": "memory-82",
+    "src": "/assets/aigen-old/memory-82.webp",
+    "title": "小卖部冰柜",
+    "memory": "冰柜玻璃上结着雾，里面的雪糕和汽水被冷气盖住。小时候站在旁边挑很久，最后总会选一个包装最亮的。",
+    "author": "by 匿名上传",
+    "date": "2026.7.9",
+    "tags": [
+      "小卖部",
+      "冰柜",
+      "雪糕",
+      "汽水",
+      "冷气"
+    ],
+    "mood": "夏天",
+    "era": "童年",
+    "type": "object",
+    "defaultPosition": {
+      "x": 40.0,
+      "y": 80.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600416000
+  },
+  {
+    "id": "memory-85",
+    "src": "/assets/aigen-old/memory-85.webp",
+    "title": "门帘上的珠子",
+    "memory": "透明珠帘一串串垂下来，后面的店铺和灯光都被切成碎片。走过去时珠子会轻轻碰在一起，像一段很小的声音。",
+    "author": "by 匿名上传",
+    "date": "2026.7.10",
+    "tags": [
+      "门帘",
+      "珠子",
+      "珠帘",
+      "小店",
+      "灯光"
+    ],
+    "mood": "温热",
+    "era": "童年",
+    "type": "object",
+    "defaultPosition": {
+      "x": 56.0,
+      "y": 80.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600424000
+  },
+  {
+    "id": "memory-97",
+    "src": "/assets/aigen-old/memory-97.webp",
+    "title": "收音机茶杯",
+    "memory": "收音机、茶杯和旧报纸放在桌上，窗边的光慢慢落下来。午后的声音从这里开始，又像是从很远的年代传回来。",
+    "author": "by 匿名上传",
+    "date": "2026.7.11",
+    "tags": [
+      "收音机",
+      "茶杯",
+      "搪瓷杯",
+      "午后",
+      "声音"
+    ],
+    "mood": "沉静",
+    "era": "童年",
+    "type": "object",
+    "defaultPosition": {
+      "x": 72.0,
+      "y": 80.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600432000
+  },
+  {
+    "id": "memory-98",
+    "src": "/assets/aigen-old/memory-98.webp",
+    "title": "门口塑料凉鞋",
+    "memory": "几双塑料凉鞋散在门口，屋里透出暖黄色的光。这样的画面很普通，却很像夏天傍晚回到家之前的最后一步。",
+    "author": "by 匿名上传",
+    "date": "2026.7.12",
+    "tags": [
+      "塑料凉鞋",
+      "拖鞋",
+      "门口",
+      "家门",
+      "夏天"
+    ],
+    "mood": "熟悉",
+    "era": "童年",
+    "type": "object",
+    "defaultPosition": {
+      "x": 88.0,
+      "y": 80.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600440000
+  },
+  {
+    "id": "memory-101",
+    "src": "/assets/aigen-old/memory-101.webp",
+    "title": "校门口杂货铺",
+    "memory": "校门旁的小店摆着冰柜、文具和零食，货架挤得满满的。放学以后，很多人的脚步都会在这里慢下来。",
+    "author": "by 匿名上传",
+    "date": "2026.7.13",
+    "tags": [
+      "校门口",
+      "杂货铺",
+      "小卖部",
+      "冰柜",
+      "文具"
+    ],
+    "mood": "热闹",
+    "era": "校园",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 18.0,
+      "y": 18.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600448000
+  },
+  {
+    "id": "memory-108",
+    "src": "/assets/aigen-old/memory-108.webp",
+    "title": "旧电脑教室",
+    "memory": "一排旧电脑安静地摆在教室里，屏幕和小圆凳都带着很早以前的科技感。它不完全是录像厅，却有那种荧幕亮起来前的等待。",
+    "author": "by 匿名上传",
+    "date": "2026.7.14",
+    "tags": [
+      "电脑",
+      "屏幕",
+      "录像厅",
+      "游戏机",
+      "教室"
+    ],
+    "mood": "怀旧",
+    "era": "校园",
+    "type": "school",
+    "defaultPosition": {
+      "x": 34.0,
+      "y": 18.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600456000
+  },
+  {
+    "id": "memory-49",
+    "src": "/assets/aigen-old/memory-49.webp",
+    "title": "井盖上的落叶",
+    "tags": [
+      "井盖",
+      "落叶",
+      "雨后",
+      "地面",
+      "水痕"
+    ],
+    "mood": "潮湿",
+    "era": "旧城",
+    "type": "texture",
+    "defaultPosition": {
+      "x": 50.0,
+      "y": 63.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600464000
+  },
+  {
+    "id": "memory-50",
+    "src": "/assets/aigen-old/memory-50.webp",
+    "title": "龙华老招牌",
+    "tags": [
+      "龙华",
+      "招牌",
+      "旧字",
+      "街边",
+      "老店"
+    ],
+    "mood": "陈旧",
+    "era": "旧城",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 66.0,
+      "y": 63.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600472000
+  },
+  {
+    "id": "memory-51",
+    "src": "/assets/aigen-old/memory-51.webp",
+    "title": "铅笔屑和作业本",
+    "tags": [
+      "铅笔屑",
+      "作业本",
+      "桌面",
+      "文具",
+      "课后"
+    ],
+    "mood": "安静",
+    "era": "校园",
+    "type": "object",
+    "defaultPosition": {
+      "x": 82.0,
+      "y": 63.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600480000
+  },
+  {
+    "id": "memory-56",
+    "src": "/assets/aigen-old/memory-56.webp",
+    "title": "旧医院门口",
+    "tags": [
+      "医院",
+      "门口",
+      "长椅",
+      "街边",
+      "灯光"
+    ],
+    "mood": "冷静",
+    "era": "旧城",
+    "type": "building",
+    "defaultPosition": {
+      "x": 18.0,
+      "y": 79.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600488000
+  },
+  {
+    "id": "memory-58",
+    "src": "/assets/aigen-old/memory-58.webp",
+    "title": "老式冰棍箱",
+    "tags": [
+      "冰棍箱",
+      "雪糕",
+      "冷饮",
+      "小卖部",
+      "童年"
+    ],
+    "mood": "夏天",
+    "era": "童年",
+    "type": "object",
+    "defaultPosition": {
+      "x": 34.0,
+      "y": 79.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600496000
+  },
+  {
+    "id": "memory-65",
+    "src": "/assets/aigen-old/memory-65.webp",
+    "title": "街边肠粉店",
+    "tags": [
+      "肠粉店",
+      "早餐",
+      "招牌",
+      "街边",
+      "老店"
+    ],
+    "mood": "热闹",
+    "era": "旧城",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 50.0,
+      "y": 79.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600504000
+  },
+  {
+    "id": "memory-66",
+    "src": "/assets/aigen-old/memory-66.webp",
+    "title": "蓝色塑料凳",
+    "tags": [
+      "塑料凳",
+      "蓝色",
+      "凳子",
+      "楼下",
+      "旧物"
+    ],
+    "mood": "日常",
+    "era": "童年",
+    "type": "object",
+    "defaultPosition": {
+      "x": 66.0,
+      "y": 79.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600512000
+  },
+  {
+    "id": "memory-67",
+    "src": "/assets/aigen-old/memory-67.webp",
+    "title": "公园里的石凳",
+    "tags": [
+      "长椅",
+      "石凳",
+      "公园",
+      "树边",
+      "休息"
+    ],
+    "mood": "放松",
+    "era": "童年",
+    "type": "park",
+    "defaultPosition": {
+      "x": 82.0,
+      "y": 79.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600520000
+  },
+  {
+    "id": "memory-69",
+    "src": "/assets/aigen-old/memory-69.webp",
+    "title": "雨后的巷子",
+    "tags": [
+      "雨后",
+      "巷子",
+      "小路",
+      "积水",
+      "旧楼"
+    ],
+    "mood": "潮湿",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 12.0,
+      "y": 18.0,
+      "rotation": -3
+    },
+    "depth": 0.92,
+    "createdAt": 1717600528000
+  },
+  {
+    "id": "memory-73",
+    "src": "/assets/aigen-old/memory-73.webp",
+    "title": "雨中街灯",
+    "tags": [
+      "雨中",
+      "街灯",
+      "夜晚",
+      "积水",
+      "街道"
+    ],
+    "mood": "清冷",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 28.0,
+      "y": 18.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600536000
+  },
+  {
+    "id": "memory-74",
+    "src": "/assets/aigen-old/memory-74.webp",
+    "title": "厨房水槽",
+    "tags": [
+      "厨房",
+      "水槽",
+      "水龙头",
+      "旧家",
+      "日常"
+    ],
+    "mood": "平淡",
+    "era": "童年",
+    "type": "interior",
+    "defaultPosition": {
+      "x": 44.0,
+      "y": 18.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600544000
+  },
+  {
+    "id": "memory-76",
+    "src": "/assets/aigen-old/memory-76.webp",
+    "title": "巷口修鞋摊",
+    "tags": [
+      "修鞋摊",
+      "巷口",
+      "木桌",
+      "小店",
+      "街边"
+    ],
+    "mood": "熟悉",
+    "era": "旧城",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 60.0,
+      "y": 18.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600552000
+  },
+  {
+    "id": "memory-80",
+    "src": "/assets/aigen-old/memory-80.webp",
+    "title": "旧书包文具盒",
+    "tags": [
+      "旧书包",
+      "文具盒",
+      "课本",
+      "红领巾",
+      "铁皮文具盒"
+    ],
+    "mood": "怀旧",
+    "era": "校园",
+    "type": "object",
+    "defaultPosition": {
+      "x": 76.0,
+      "y": 18.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600560000
+  },
+  {
+    "id": "memory-81",
+    "src": "/assets/aigen-old/memory-81.webp",
+    "title": "小卖部冰柜",
+    "tags": [
+      "小卖部",
+      "冰柜",
+      "雪糕",
+      "汽水",
+      "冷饮"
+    ],
+    "mood": "夏天",
+    "era": "童年",
+    "type": "shop",
+    "defaultPosition": {
+      "x": 90.0,
+      "y": 18.0,
+      "rotation": 3
+    },
+    "depth": 0.92,
+    "createdAt": 1717600568000
+  },
+  {
+    "id": "memory-87",
+    "src": "/assets/aigen-old/memory-87.webp",
+    "title": "旧城河边栏杆",
+    "tags": [
+      "河边",
+      "栏杆",
+      "旧城",
+      "水面",
+      "散步"
+    ],
+    "mood": "发呆",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 20.0,
+      "y": 34.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600576000
+  },
+  {
+    "id": "memory-91",
+    "src": "/assets/aigen-old/memory-91.webp",
+    "title": "榕树下的石凳",
+    "tags": [
+      "榕树",
+      "石凳",
+      "树荫",
+      "公园",
+      "旧城"
+    ],
+    "mood": "安稳",
+    "era": "童年",
+    "type": "park",
+    "defaultPosition": {
+      "x": 36.0,
+      "y": 34.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600584000
+  },
+  {
+    "id": "memory-92",
+    "src": "/assets/aigen-old/memory-92.webp",
+    "title": "夜里的旧楼",
+    "tags": [
+      "夜里",
+      "旧楼",
+      "灯光",
+      "招牌",
+      "窗口"
+    ],
+    "mood": "清冷",
+    "era": "旧城",
+    "type": "building",
+    "defaultPosition": {
+      "x": 52.0,
+      "y": 34.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600592000
+  },
+  {
+    "id": "memory-93",
+    "src": "/assets/aigen-old/memory-93.webp",
+    "title": "旧屋饭桌",
+    "tags": [
+      "饭桌",
+      "碗筷",
+      "木椅",
+      "旧屋",
+      "晚饭"
+    ],
+    "mood": "温暖",
+    "era": "童年",
+    "type": "interior",
+    "defaultPosition": {
+      "x": 68.0,
+      "y": 34.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600600000
+  },
+  {
+    "id": "memory-95",
+    "src": "/assets/aigen-old/memory-95.webp",
+    "title": "墙上的涂鸦",
+    "tags": [
+      "涂鸦",
+      "墙画",
+      "旧墙",
+      "水泥地",
+      "楼下"
+    ],
+    "mood": "陈旧",
+    "era": "旧城",
+    "type": "texture",
+    "defaultPosition": {
+      "x": 84.0,
+      "y": 34.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600608000
+  },
+  {
+    "id": "memory-96",
+    "src": "/assets/aigen-old/memory-96.webp",
+    "title": "阳台的晾衣杆",
+    "tags": [
+      "阳台",
+      "晾衣杆",
+      "晾衣",
+      "旧楼",
+      "生活"
+    ],
+    "mood": "日常",
+    "era": "童年",
+    "type": "building",
+    "defaultPosition": {
+      "x": 12.0,
+      "y": 50.0,
+      "rotation": -2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600616000
+  },
+  {
+    "id": "memory-99",
+    "src": "/assets/aigen-old/memory-99.webp",
+    "title": "校园走廊",
+    "tags": [
+      "校园",
+      "走廊",
+      "教室",
+      "栏杆",
+      "放学"
+    ],
+    "mood": "清冷",
+    "era": "校园",
+    "type": "school",
+    "defaultPosition": {
+      "x": 28.0,
+      "y": 50.0,
+      "rotation": -1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600624000
+  },
+  {
+    "id": "memory-100",
+    "src": "/assets/aigen-old/memory-100.webp",
+    "title": "黄昏操场",
+    "tags": [
+      "操场",
+      "跑道",
+      "黄昏",
+      "球场",
+      "放学"
+    ],
+    "mood": "开阔",
+    "era": "校园",
+    "type": "school",
+    "defaultPosition": {
+      "x": 44.0,
+      "y": 50.0,
+      "rotation": 0
+    },
+    "depth": 0.92,
+    "createdAt": 1717600632000
+  },
+  {
+    "id": "memory-109",
+    "src": "/assets/aigen-old/memory-109.webp",
+    "title": "旧教室桌椅",
+    "tags": [
+      "教室",
+      "桌椅",
+      "黑板",
+      "学生",
+      "校园"
+    ],
+    "mood": "怀旧",
+    "era": "校园",
+    "type": "school",
+    "defaultPosition": {
+      "x": 60.0,
+      "y": 50.0,
+      "rotation": 1
+    },
+    "depth": 0.92,
+    "createdAt": 1717600640000
+  },
+  {
+    "id": "memory-111",
+    "src": "/assets/aigen-old/memory-111.webp",
+    "title": "拆迁前的空地",
+    "tags": [
+      "拆迁",
+      "空地",
+      "旧楼",
+      "工地",
+      "城市更新"
+    ],
+    "mood": "失落",
+    "era": "旧城",
+    "type": "street",
+    "defaultPosition": {
+      "x": 76.0,
+      "y": 50.0,
+      "rotation": 2
+    },
+    "depth": 0.92,
+    "createdAt": 1717600648000
+  }
+]
