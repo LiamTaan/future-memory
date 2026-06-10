@@ -178,17 +178,19 @@ button {
 
 .gesture-location-data::before {
   position: absolute;
-  left: 19vw;
-  top: 30vh;
-  width: 62vw;
-  height: 36vh;
+  left: 15vw;
+  top: 24vh;
+  width: 70vw;
+  height: 48vh;
   content: "";
   opacity: 0.58;
   background:
     linear-gradient(32deg, transparent 0 15.5%, rgba(3, 22, 184, 0.42) 15.7% 16%, transparent 16.2% 100%),
     linear-gradient(-18deg, transparent 0 38%, rgba(3, 22, 184, 0.36) 38.2% 38.5%, transparent 38.7% 100%),
     linear-gradient(24deg, transparent 0 59%, rgba(3, 22, 184, 0.34) 59.2% 59.45%, transparent 59.7% 100%),
-    linear-gradient(-36deg, transparent 0 76%, rgba(3, 22, 184, 0.28) 76.2% 76.48%, transparent 76.72% 100%);
+    linear-gradient(-36deg, transparent 0 76%, rgba(3, 22, 184, 0.28) 76.2% 76.48%, transparent 76.72% 100%),
+    linear-gradient(8deg, transparent 0 47%, rgba(3, 22, 184, 0.24) 47.2% 47.45%, transparent 47.7% 100%),
+    linear-gradient(-58deg, transparent 0 64%, rgba(3, 22, 184, 0.22) 64.2% 64.45%, transparent 64.7% 100%);
   filter: blur(0.12px);
   transform: rotate(-1.4deg);
 }
@@ -244,28 +246,48 @@ button {
 }
 
 .gesture-map-node--nostalgia {
-  left: 21vw;
-  top: 28vh;
+  left: 22vw;
+  top: 25vh;
 }
 
 .gesture-map-node--storage {
-  left: 36vw;
-  top: 37vh;
+  left: 34vw;
+  top: 34vh;
 }
 
 .gesture-map-node--forgetting {
-  left: 51vw;
-  top: 21vh;
+  left: 47vw;
+  top: 22vh;
 }
 
 .gesture-map-node--media {
-  left: 62vw;
-  top: 45vh;
+  left: 58vw;
+  top: 42vh;
 }
 
 .gesture-map-node--glitch {
   left: 76vw;
-  top: 34vh;
+  top: 32vh;
+}
+
+.gesture-map-node--one {
+  left: 42vw;
+  top: 52vh;
+}
+
+.gesture-map-node--two {
+  left: 66vw;
+  top: 59vh;
+}
+
+.gesture-map-node--three {
+  left: 80vw;
+  top: 49vh;
+}
+
+.gesture-map-node--four {
+  left: 53vw;
+  top: 65vh;
 }
 
 .gesture-data-fragment {
