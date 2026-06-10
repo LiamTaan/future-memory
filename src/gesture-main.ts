@@ -34,8 +34,20 @@ type ModernTile = {
   cropX: number;
   cropY: number;
   zoom: number;
+  cropShape: string;
   phase: number;
   node: HTMLDivElement;
+};
+
+type CropPreset = {
+  widthRatio: number;
+  minWidth: number;
+  maxWidth: number;
+  heightRatio: number;
+  x: number;
+  y: number;
+  zoom: number;
+  shape: string;
 };
 
 type PastPhoto = {
@@ -150,7 +162,7 @@ async function boot() {
   state.memoryQueue = shuffled(state.memories);
   console.info(`[gesture] old-city pick pool: ${state.memories.length} photos`);
   state.modernSources = buildModernSources(assets.modern || []);
-  createModernTiles(state.modernSources);
+  await createModernTiles(state.modernSources);
   bindPointerPreview();
   window.addEventListener('resize', resizeHandCanvas);
   resizeHandCanvas();
@@ -216,14 +228,16 @@ function buildModernSources(sources: string[]) {
   ];
 }
 
-function createModernTiles(sources: string[]) {
+async function createModernTiles(sources: string[]) {
   const count = Math.min(11, Math.max(7, sources.length));
+  const sourceAspects = await Promise.all(sources.map((src) => getImageAspect(src)));
   const lanes = [0.18, 0.33, 0.5, 0.67, 0.82];
   const spacing = Math.max(360, window.innerWidth / 3.2);
   const fragment = document.createDocumentFragment();
 
   for (let i = 0; i < count; i += 1) {
     const src = sources[i % sources.length];
+    const sourceAspect = sourceAspects[i % sourceAspects.length] || 1;
     const node = document.createElement('div');
     node.className = 'gesture-modern-photo';
     node.innerHTML = `<img src="${src}" alt="" decoding="async" loading="${i < 8 ? 'eager' : 'lazy'}" />`;
@@ -231,10 +245,12 @@ function createModernTiles(sources: string[]) {
 
     const lane = i % lanes.length;
     const z = 0.38 + (i % 4) * 0.16;
-    const width = lerp(260, 420, (i % 3) / 2);
-    const cropX = 16 + ((i * 23) % 68);
-    const cropY = 14 + ((i * 31) % 72);
-    const zoom = 1.04 + (i % 4) * 0.045;
+    const crop = pickModernCropPreset(sourceAspect, i);
+    const width = clamp(window.innerWidth * crop.widthRatio, crop.minWidth, crop.maxWidth);
+    const height = clamp(window.innerHeight * crop.heightRatio, width * 0.3, width * 1.55);
+    const cropX = (crop.x + ((i * 7) % 9) - 4 + 100) % 100;
+    const cropY = (crop.y + ((i * 11) % 9) - 4 + 100) % 100;
+    const zoom = crop.zoom;
     state.modernTiles.push({
       id: `modern-${i}`,
       src,
@@ -243,17 +259,60 @@ function createModernTiles(sources: string[]) {
       z,
       vx: 42 + (i % 3) * 9,
       width,
-      height: width / 1.42,
+      height,
       rotation: ((i % 3) - 1) * 0.25,
       cropX,
       cropY,
       zoom,
+      cropShape: crop.shape,
       phase: (i * 1.17) % (Math.PI * 2),
       node,
     });
   }
 
   modernFlow.appendChild(fragment);
+}
+
+const modernCropPresets = [
+  { widthRatio: 0.16, minWidth: 150, maxWidth: 260, heightRatio: 0.34, x: 26, y: 44, zoom: 1.85, shape: 'inset(0 0 0 0)' },
+  { widthRatio: 0.13, minWidth: 130, maxWidth: 220, heightRatio: 0.42, x: 54, y: 38, zoom: 2.15, shape: 'polygon(4% 0, 100% 0, 96% 100%, 0 100%)' },
+  { widthRatio: 0.18, minWidth: 160, maxWidth: 280, heightRatio: 0.3, x: 76, y: 56, zoom: 2.35, shape: 'inset(0 0 0 0)' },
+];
+
+const modernWideCropPresets: CropPreset[] = [
+  { widthRatio: 0.11, minWidth: 115, maxWidth: 190, heightRatio: 0.42, x: 22, y: 48, zoom: 2.2, shape: 'inset(0 0 0 0)' },
+  { widthRatio: 0.13, minWidth: 130, maxWidth: 220, heightRatio: 0.5, x: 48, y: 42, zoom: 2.45, shape: 'polygon(4% 0, 100% 0, 96% 100%, 0 100%)' },
+  { widthRatio: 0.1, minWidth: 105, maxWidth: 175, heightRatio: 0.36, x: 72, y: 58, zoom: 2.65, shape: 'inset(0 0 0 0)' },
+];
+
+const modernTallCropPresets: CropPreset[] = [
+  { widthRatio: 0.3, minWidth: 280, maxWidth: 500, heightRatio: 0.12, x: 48, y: 18, zoom: 2.1, shape: 'inset(0 0 0 0)' },
+  { widthRatio: 0.34, minWidth: 300, maxWidth: 560, heightRatio: 0.15, x: 52, y: 46, zoom: 2.35, shape: 'inset(0 0 0 0)' },
+  { widthRatio: 0.26, minWidth: 240, maxWidth: 440, heightRatio: 0.11, x: 42, y: 76, zoom: 2.55, shape: 'polygon(0 0, 100% 0, 98% 100%, 2% 100%)' },
+];
+
+function pickModernCropPreset(sourceAspect: number, index: number) {
+  const presets = sourceAspect >= 1.12
+    ? modernWideCropPresets
+    : sourceAspect <= 0.9
+      ? modernTallCropPresets
+      : modernCropPresets;
+  return presets[index % presets.length];
+}
+
+function getImageAspect(src: string) {
+  return new Promise<number>((resolve) => {
+    const image = new Image();
+    image.onload = () => {
+      if (!image.naturalWidth || !image.naturalHeight) {
+        resolve(1);
+        return;
+      }
+      resolve(image.naturalWidth / image.naturalHeight);
+    };
+    image.onerror = () => resolve(1);
+    image.src = src;
+  });
 }
 
 function bindPointerPreview() {
@@ -460,6 +519,7 @@ function moveModernTiles(dt: number, now: number) {
     tile.node.style.setProperty('--crop-x', `${tile.cropX}%`);
     tile.node.style.setProperty('--crop-y', `${tile.cropY}%`);
     tile.node.style.setProperty('--image-zoom', `${tile.zoom}`);
+    tile.node.style.setProperty('--crop-shape', tile.cropShape);
     tile.node.style.transform = `translate3d(${tile.x}px, ${tile.y + drift}px, 0) translate(-50%, -50%) scale(${scale}) rotate(${tile.rotation}deg)`;
   }
 }
