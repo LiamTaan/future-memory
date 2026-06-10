@@ -278,21 +278,21 @@ async function createModernTiles(sources: string[]) {
 }
 
 const modernCropPresets = [
-  { widthRatio: 0.16, minWidth: 150, maxWidth: 260, heightRatio: 0.34, x: 26, y: 44, zoom: 1.85, shape: 'inset(0 0 0 0)' },
-  { widthRatio: 0.13, minWidth: 130, maxWidth: 220, heightRatio: 0.42, x: 54, y: 38, zoom: 2.15, shape: 'polygon(4% 0, 100% 0, 96% 100%, 0 100%)' },
-  { widthRatio: 0.18, minWidth: 160, maxWidth: 280, heightRatio: 0.3, x: 76, y: 56, zoom: 2.35, shape: 'inset(0 0 0 0)' },
+  { widthRatio: 0.12, minWidth: 120, maxWidth: 200, heightRatio: 0.24, x: 26, y: 44, zoom: 1.85, shape: 'inset(0 0 0 0)' },
+  { widthRatio: 0.1, minWidth: 105, maxWidth: 170, heightRatio: 0.3, x: 54, y: 38, zoom: 2.15, shape: 'polygon(4% 0, 100% 0, 96% 100%, 0 100%)' },
+  { widthRatio: 0.14, minWidth: 130, maxWidth: 220, heightRatio: 0.22, x: 76, y: 56, zoom: 2.35, shape: 'inset(0 0 0 0)' },
 ];
 
 const modernWideCropPresets: CropPreset[] = [
-  { widthRatio: 0.11, minWidth: 115, maxWidth: 190, heightRatio: 0.42, x: 22, y: 48, zoom: 2.2, shape: 'inset(0 0 0 0)' },
-  { widthRatio: 0.13, minWidth: 130, maxWidth: 220, heightRatio: 0.5, x: 48, y: 42, zoom: 2.45, shape: 'polygon(4% 0, 100% 0, 96% 100%, 0 100%)' },
-  { widthRatio: 0.1, minWidth: 105, maxWidth: 175, heightRatio: 0.36, x: 72, y: 58, zoom: 2.65, shape: 'inset(0 0 0 0)' },
+  { widthRatio: 0.075, minWidth: 90, maxWidth: 140, heightRatio: 0.3, x: 22, y: 48, zoom: 2.2, shape: 'inset(0 0 0 0)' },
+  { widthRatio: 0.09, minWidth: 100, maxWidth: 160, heightRatio: 0.34, x: 48, y: 42, zoom: 2.45, shape: 'polygon(4% 0, 100% 0, 96% 100%, 0 100%)' },
+  { widthRatio: 0.07, minWidth: 82, maxWidth: 130, heightRatio: 0.26, x: 72, y: 58, zoom: 2.65, shape: 'inset(0 0 0 0)' },
 ];
 
 const modernTallCropPresets: CropPreset[] = [
-  { widthRatio: 0.3, minWidth: 280, maxWidth: 500, heightRatio: 0.12, x: 48, y: 18, zoom: 2.1, shape: 'inset(0 0 0 0)' },
-  { widthRatio: 0.34, minWidth: 300, maxWidth: 560, heightRatio: 0.15, x: 52, y: 46, zoom: 2.35, shape: 'inset(0 0 0 0)' },
-  { widthRatio: 0.26, minWidth: 240, maxWidth: 440, heightRatio: 0.11, x: 42, y: 76, zoom: 2.55, shape: 'polygon(0 0, 100% 0, 98% 100%, 2% 100%)' },
+  { widthRatio: 0.22, minWidth: 190, maxWidth: 340, heightRatio: 0.085, x: 48, y: 18, zoom: 2.1, shape: 'inset(0 0 0 0)' },
+  { widthRatio: 0.25, minWidth: 210, maxWidth: 380, heightRatio: 0.105, x: 52, y: 46, zoom: 2.35, shape: 'inset(0 0 0 0)' },
+  { widthRatio: 0.19, minWidth: 170, maxWidth: 310, heightRatio: 0.08, x: 42, y: 76, zoom: 2.55, shape: 'polygon(0 0, 100% 0, 98% 100%, 2% 100%)' },
 ];
 
 function pickModernCropPreset(sourceAspect: number, index: number) {
@@ -556,7 +556,7 @@ function grabNewPastPhoto(now: number) {
   const sourceIndex = state.nextMemoryIndex;
   state.nextMemoryIndex += 1;
 
-  const width = clamp(window.innerWidth * 0.24, 180, 340);
+  const width = clamp(window.innerWidth * 0.16, 120, 230);
   const photo: PastPhoto = {
     id: `past-${memory.id}-${now.toFixed(0)}`,
     src: memory.src,
