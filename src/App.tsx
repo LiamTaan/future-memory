@@ -1772,11 +1772,19 @@ function DetailOverlay({ photo, onClose }: { photo: PhotoNode; onClose: () => vo
     if (!clickedContent) onClose();
   };
 
+  const moveImageMask = (event: React.PointerEvent<HTMLDivElement>) => {
+    const node = imageRef.current;
+    if (!node) return;
+    const rect = node.getBoundingClientRect();
+    node.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+    node.style.setProperty('--my', `${event.clientY - rect.top}px`);
+  };
+
   return (
     <div className="modal-layer detail-layer" onMouseDown={closeIfOutside}>
       <div className="white-veil" />
       <div className="detail-content">
-        <div className="detail-image-wrap" ref={imageRef} style={{ '--detail-image-aspect-ratio': aspectRatio.toFixed(5) } as React.CSSProperties}>
+        <div className="detail-image-wrap" ref={imageRef} onPointerMove={moveImageMask} style={{ '--detail-image-aspect-ratio': aspectRatio.toFixed(5) } as React.CSSProperties}>
           <img src={photo.src} alt={photo.title} decoding="async" style={photo.editParams ? { filter: editParamsFilter(photo.editParams) } : undefined} />
           <DetailDustCanvas />
         </div>
@@ -1834,8 +1842,8 @@ function WakeView({ onClose, onConfirm }: { onClose: () => void; onConfirm: (key
       const nextWords = layoutKeywords(KEYWORDS, true);
       const maxEnterDelay = Math.max(...nextWords.map((word) => word.enterDelay), 0);
       setWords(nextWords);
-      window.setTimeout(() => setRefreshing(false), maxEnterDelay + 960);
-    }, maxLeaveDelay + 940);
+      window.setTimeout(() => setRefreshing(false), maxEnterDelay + 680);
+    }, maxLeaveDelay + 560);
   };
 
   const repelKeywords = (event: React.PointerEvent<HTMLDivElement>) => {
@@ -2003,8 +2011,8 @@ function layoutKeywords(source: string[], stagger = false): KeywordLayout[] {
       x,
       y,
       scale,
-      blur: 0.45 + 1.25 * distanceNorm,
-      opacity: 0.74 - 0.18 * distanceNorm,
+      blur: 0.28 + 0.74 * distanceNorm,
+      opacity: 0.9 - 0.12 * distanceNorm,
       driftX: (Math.random() > 0.5 ? 1 : -1) * (8 + Math.random() * 10),
       driftY: (Math.random() > 0.5 ? 1 : -1) * (7 + Math.random() * 10),
       driftDuration: 5200 + Math.round(Math.random() * 1800),
@@ -2481,7 +2489,7 @@ function EditorView({
   const [signature, setSignature] = useState('');
   const [finishing, setFinishing] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const editorImageRef = useRef<HTMLDivElement>(null);
+  const editorImageMaskRef = useRef<HTMLDivElement>(null);
   const glitchCanvasRef = useRef<HTMLCanvasElement>(null);
   const aspectRatio = useImageAspectRatio(result.src);
   const imageBox = useResultImageBox(aspectRatio);
@@ -2490,7 +2498,7 @@ function EditorView({
 
   const update = (key: keyof EditParams, value: number) => setParams((current) => ({ ...current, [key]: value }));
   const moveImageMask = (event: React.PointerEvent<HTMLDivElement>) => {
-    const node = editorImageRef.current;
+    const node = editorImageMaskRef.current;
     if (!node) return;
     const rect = node.getBoundingClientRect();
     node.style.setProperty('--mx', `${event.clientX - rect.left}px`);
@@ -2517,9 +2525,11 @@ function EditorView({
           <MemorySlider label="real 现实" endLabel="dream 想象" value={params.dream} onChange={(value) => update('dream', value)} />
           <MemorySlider label="new 崭新" endLabel="worn 陈旧" value={params.worn} onChange={(value) => update('worn', value)} />
         </div>
-        <div className="editor-image" ref={editorImageRef} onPointerMove={moveImageMask}>
+        <div className="editor-image">
           <h1>试着回想...</h1>
-          <GlitchImage src={processedImageSrc} params={params} canvasRef={glitchCanvasRef} imageBox={imageBox} />
+          <div className="editor-image-mask" ref={editorImageMaskRef} onPointerMove={moveImageMask}>
+            <GlitchImage src={processedImageSrc} params={params} canvasRef={glitchCanvasRef} imageBox={imageBox} />
+          </div>
           <p className="editor-keyword">
             <KeywordText text={keyword} />
           </p>

@@ -309,6 +309,7 @@ button:focus-visible {
   --mx: 50%;
   --my: 50%;
   --photo-aspect-ratio: 1.42;
+  --image-cursor-size: clamp(38px, 4.4vw, 68px);
   --project-blur: 0px;
   --project-opacity: 1;
   --hover-scale: 1.055;
@@ -378,6 +379,29 @@ button:focus-visible {
     18px 22px 28px rgba(0, 0, 0, var(--photo-shadow-alpha)),
     4px 7px 10px rgba(0, 0, 0, var(--photo-shadow-tight-alpha)),
     0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+.inner-image-wrapper::before {
+  position: absolute;
+  left: var(--mx);
+  top: var(--my);
+  z-index: 3;
+  width: var(--image-cursor-size);
+  height: var(--image-cursor-size);
+  content: "";
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(4.5px) saturate(0.94);
+  -webkit-backdrop-filter: blur(4.5px) saturate(0.94);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.055) 0 32%, rgba(255, 255, 255, 0.025) 62%, transparent 100%);
+  box-shadow: none;
+  transition: opacity 0.14s ease;
+}
+
+.memory-photo:hover .inner-image-wrapper::before {
+  opacity: 1;
 }
 
 .inner-image-wrapper > img {
@@ -559,13 +583,40 @@ button:focus-visible {
 
 .detail-image-wrap {
   --detail-image-aspect-ratio: 1.62;
+  --mx: 50%;
+  --my: 50%;
+  --image-cursor-size: 72px;
   position: absolute;
   left: calc(50% - 220px);
   top: 50%;
   z-index: 5;
   width: min(30rem, 40vw, calc(68vh * var(--detail-image-aspect-ratio)));
   aspect-ratio: var(--detail-image-aspect-ratio);
+  overflow: hidden;
   transform: translate(-50%, -50%);
+}
+
+.detail-image-wrap::before {
+  position: absolute;
+  left: var(--mx);
+  top: var(--my);
+  z-index: 4;
+  width: var(--image-cursor-size);
+  height: var(--image-cursor-size);
+  content: "";
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(4.5px) saturate(0.94);
+  -webkit-backdrop-filter: blur(4.5px) saturate(0.94);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.055) 0 32%, rgba(255, 255, 255, 0.025) 62%, transparent 100%);
+  box-shadow: none;
+  transition: opacity 0.14s ease;
+}
+
+.detail-image-wrap:hover::before {
+  opacity: 1;
 }
 
 .detail-image-wrap > img {
@@ -969,11 +1020,16 @@ button:focus-visible {
   min-width: max-content;
   padding: 0.65rem 1.15rem;
   border: 0;
-  color: rgba(46, 46, 46, 0.58);
+  appearance: none;
+  -webkit-appearance: none;
+  color: rgba(255, 255, 255, 0.9);
   background: transparent;
+  box-shadow: none;
   font-size: clamp(1.25rem, 1.6vw, 2.1rem);
   line-height: 1;
-  text-shadow: 0 0 0.9rem rgba(255, 255, 255, 0.64), 0 1px 1px rgba(255, 255, 255, 0.52);
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  text-shadow: 0 0 0.45rem rgba(255, 255, 255, 0.86), 0 0 1.35rem rgba(255, 255, 255, 0.58), 0 1px 2px rgba(30, 30, 30, 0.2);
   filter: blur(var(--keyword-blur));
   transform: translate(calc(-50% + var(--repel-x)), calc(-50% + var(--repel-y))) scale(var(--keyword-scale));
   transition: filter 0.24s ease, opacity 0.24s ease, transform 0.26s ease;
@@ -999,17 +1055,38 @@ button:focus-visible {
   z-index: -1;
   border-radius: 50%;
   content: "";
-  background: rgba(255, 255, 255, 0.38);
-  filter: blur(13px);
-  opacity: 0.52;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0) 72%);
+  filter: blur(15px);
+  opacity: 0.44;
 }
 
 .keyword-chip:hover {
   filter: blur(0.12px) !important;
   opacity: 1 !important;
   transform: translate(calc(-50% + var(--repel-x)), calc(-50% + var(--repel-y) - 8px)) scale(calc(var(--keyword-scale) * 1.06));
-  color: rgba(38, 38, 38, 0.78);
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.68), 0 0 18px rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.98);
+  text-shadow: 0 0 0.55rem rgba(255, 255, 255, 0.96), 0 0 1.4rem rgba(255, 255, 255, 0.72), 0 1px 2px rgba(28, 28, 28, 0.18);
+}
+
+.wake-layer--refreshing .keyword-chip {
+  background: transparent;
+  box-shadow: none;
+  outline: 0;
+}
+
+.wake-layer--refreshing .keyword-chip.is-leaving {
+  animation: keywordFadeOut 520ms ease forwards;
+  animation-delay: var(--leave-delay, 0ms);
+}
+
+.wake-layer--refreshing .keyword-chip.is-entering {
+  animation: keywordFadeIn 620ms ease both, keywordDrift var(--drift-duration) ease-in-out infinite alternate;
+  animation-delay: var(--enter-delay, 0ms), calc(var(--enter-delay, 0ms) + 620ms);
+}
+
+.wake-layer--refreshing .keyword-chip::before,
+.wake-layer--refreshing .keyword-chip::after {
+  display: none;
 }
 
 .keyword-chip.is-leaving {
@@ -1766,6 +1843,7 @@ button:focus-visible {
 .result-image {
   --mx: 50%;
   --my: 50%;
+  --image-cursor-size: 72px;
   position: relative;
   width: var(--result-image-width);
   max-width: 82vw;
@@ -1786,12 +1864,21 @@ button:focus-visible {
 
 .result-image::after {
   position: absolute;
-  inset: auto -12% -16% -12%;
-  height: 42%;
+  left: var(--mx);
+  top: var(--my);
+  z-index: 4;
+  width: var(--image-cursor-size);
+  height: var(--image-cursor-size);
   content: "";
-  background: radial-gradient(ellipse at center bottom, rgba(255, 255, 255, 0.9), transparent 72%);
-  filter: blur(24px);
+  border-radius: 50%;
+  opacity: 0;
   pointer-events: none;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(4.5px) saturate(0.94);
+  -webkit-backdrop-filter: blur(4.5px) saturate(0.94);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.065) 0 32%, rgba(255, 255, 255, 0.028) 62%, transparent 100%);
+  box-shadow: none;
+  transition: opacity 0.14s ease;
 }
 
 .result-image img {
@@ -1826,6 +1913,10 @@ button:focus-visible {
 
 .result-image:hover .result-blur-copy {
   opacity: 0.82;
+}
+
+.result-image:hover::after {
+  opacity: 1;
 }
 
 .button-row {
@@ -1994,8 +2085,6 @@ button:focus-visible {
 }
 
 .editor-image {
-  --mx: 50%;
-  --my: 50%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -2057,8 +2146,41 @@ button:focus-visible {
 }
 
 .glitch-canvas {
+  display: block;
   max-width: 100%;
+}
+
+.editor-image-mask {
+  --mx: 50%;
+  --my: 50%;
+  --image-cursor-size: 72px;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
   box-shadow: 0 20px 46px rgba(42, 40, 35, 0.18);
+}
+
+.editor-image-mask::after {
+  position: absolute;
+  left: var(--mx);
+  top: var(--my);
+  z-index: 3;
+  width: var(--image-cursor-size);
+  height: var(--image-cursor-size);
+  content: "";
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(4.5px) saturate(0.94);
+  -webkit-backdrop-filter: blur(4.5px) saturate(0.94);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.055) 0 32%, rgba(255, 255, 255, 0.025) 62%, transparent 100%);
+  box-shadow: none;
+  transition: opacity 0.14s ease;
+}
+
+.editor-image-mask:hover::after {
+  opacity: 1;
 }
 
 .editor-paper {
@@ -2071,29 +2193,6 @@ button:focus-visible {
   z-index: 2;
   transform: translateY(-50%);
   animation: editorSideIn 720ms ease 220ms both;
-}
-
-.editor-image::after {
-  position: absolute;
-  left: var(--mx);
-  top: var(--my);
-  z-index: 3;
-  width: 142px;
-  height: 142px;
-  content: "";
-  border-radius: 50%;
-  opacity: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(8px) saturate(0.92);
-  -webkit-backdrop-filter: blur(8px) saturate(0.92);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0 38%, rgba(255, 255, 255, 0.03) 68%, transparent 100%);
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
-  transition: opacity 0.14s ease;
-}
-
-.editor-image:hover::after {
-  opacity: 1;
 }
 
 .editor-paper-content {
@@ -2326,6 +2425,28 @@ button:focus-visible {
     opacity: 0;
     clip-path: inset(0 0 0 0);
     transform: translate(-50%, -1.2rem) scale(0.84);
+  }
+}
+
+@keyframes keywordFadeOut {
+  0% {
+    opacity: 1;
+    filter: blur(var(--keyword-blur));
+  }
+  100% {
+    opacity: 0;
+    filter: blur(calc(var(--keyword-blur) + 1.8px));
+  }
+}
+
+@keyframes keywordFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(calc(var(--keyword-blur) + 1.8px));
+  }
+  100% {
+    opacity: 1;
+    filter: blur(var(--keyword-blur));
   }
 }
 
