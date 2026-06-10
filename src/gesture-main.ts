@@ -31,6 +31,9 @@ type ModernTile = {
   width: number;
   height: number;
   rotation: number;
+  cropX: number;
+  cropY: number;
+  zoom: number;
   phase: number;
   node: HTMLDivElement;
 };
@@ -112,6 +115,7 @@ root.innerHTML = `
     <div class="gesture-camera-fallback" aria-hidden="true"></div>
     <video class="gesture-camera" data-video playsinline muted></video>
     <div class="gesture-camera-wash" aria-hidden="true"></div>
+    <div class="gesture-data-flow" aria-hidden="true"><span></span><span></span><span></span></div>
     <div class="gesture-modern-flow" data-modern-flow aria-hidden="true"></div>
     <div class="gesture-past-layer" data-past-layer></div>
     <canvas class="gesture-hand-canvas" data-hand-canvas></canvas>
@@ -216,6 +220,9 @@ function createModernTiles(sources: string[]) {
     const lane = i % lanes.length;
     const z = 0.38 + (i % 4) * 0.16;
     const width = lerp(260, 420, (i % 3) / 2);
+    const cropX = 16 + ((i * 23) % 68);
+    const cropY = 14 + ((i * 31) % 72);
+    const zoom = 1.04 + (i % 4) * 0.045;
     state.modernTiles.push({
       id: `modern-${i}`,
       src,
@@ -225,7 +232,10 @@ function createModernTiles(sources: string[]) {
       vx: 42 + (i % 3) * 9,
       width,
       height: width / 1.42,
-      rotation: ((i % 5) - 2) * 1.8,
+      rotation: ((i % 3) - 1) * 0.25,
+      cropX,
+      cropY,
+      zoom,
       phase: (i * 1.17) % (Math.PI * 2),
       node,
     });
@@ -428,13 +438,16 @@ function moveModernTiles(dt: number, now: number) {
     }
 
     const scale = lerp(0.88, 1.1, tile.z);
-    const blur = lerp(1.8, 0.2, tile.z);
-    const opacity = lerp(0.46, 0.76, tile.z);
+    const blur = lerp(0.82, 0.08, tile.z);
+    const opacity = lerp(0.68, 0.92, tile.z);
     tile.node.style.width = `${tile.width}px`;
     tile.node.style.height = `${tile.height}px`;
     tile.node.style.opacity = `${opacity}`;
     tile.node.style.zIndex = `${Math.round(tile.z * 80)}`;
-    tile.node.style.filter = `blur(${blur}px) saturate(0.82) contrast(0.94) brightness(1.02)`;
+    tile.node.style.filter = `blur(${blur}px) saturate(0.96) contrast(1.02) brightness(1.04)`;
+    tile.node.style.setProperty('--crop-x', `${tile.cropX}%`);
+    tile.node.style.setProperty('--crop-y', `${tile.cropY}%`);
+    tile.node.style.setProperty('--image-zoom', `${tile.zoom}`);
     tile.node.style.transform = `translate3d(${tile.x}px, ${tile.y + drift}px, 0) translate(-50%, -50%) scale(${scale}) rotate(${tile.rotation}deg)`;
   }
 }
@@ -526,6 +539,14 @@ function updatePastPhotos(now: number) {
     photo.node.style.height = `${photo.height}px`;
     photo.node.style.setProperty('--touch-x', `${localTouchX}%`);
     photo.node.style.setProperty('--touch-y', `${localTouchY}%`);
+    if (photo.state === 'placed') {
+      const age = clamp((now - photo.createdAt) / PHOTO_LIFETIME_MS, 0, 1);
+      photo.node.style.setProperty('--placed-opacity', `${lerp(0.58, 0.28, age)}`);
+      photo.node.style.setProperty('--placed-blur', `${lerp(2.1, 5.2, age)}px`);
+    } else {
+      photo.node.style.removeProperty('--placed-opacity');
+      photo.node.style.removeProperty('--placed-blur');
+    }
     photo.node.style.transform = `translate3d(${photo.x}px, ${photo.y}px, 0) translate(-50%, -50%) rotate(${photo.rotation}deg)`;
   }
 }
