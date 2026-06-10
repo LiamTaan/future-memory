@@ -9,3 +9,4 @@ codex-*.log
 Thumbs.db
 
 *.tsbuildinfo
+.codex-temp/
