@@ -309,7 +309,7 @@ button:focus-visible {
   --mx: 50%;
   --my: 50%;
   --photo-aspect-ratio: 1.42;
-  --image-cursor-size: clamp(38px, 4.4vw, 68px);
+  --image-cursor-size: clamp(58px, 6.2vw, 110px);
   --project-blur: 0px;
   --project-opacity: 1;
   --hover-scale: 1.055;
@@ -393,10 +393,12 @@ button:focus-visible {
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  backdrop-filter: blur(4.5px) saturate(0.94);
-  -webkit-backdrop-filter: blur(4.5px) saturate(0.94);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.055) 0 32%, rgba(255, 255, 255, 0.025) 62%, transparent 100%);
-  box-shadow: none;
+  backdrop-filter: blur(7px) saturate(0.96);
+  -webkit-backdrop-filter: blur(7px) saturate(0.96);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.13) 0 28%, rgba(255, 255, 255, 0.055) 56%, rgba(255, 255, 255, 0) 78%);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.16);
+  mask-image: radial-gradient(circle, #000 0 34%, rgba(0, 0, 0, 0.72) 52%, rgba(0, 0, 0, 0.2) 70%, transparent 86%);
+  -webkit-mask-image: radial-gradient(circle, #000 0 34%, rgba(0, 0, 0, 0.72) 52%, rgba(0, 0, 0, 0.2) 70%, transparent 86%);
   transition: opacity 0.14s ease;
 }
 
@@ -486,7 +488,7 @@ button:focus-visible {
 
 .wake-image-button {
   position: absolute;
-  z-index: 150;
+  z-index: 24000;
   left: 50%;
   bottom: clamp(2rem, 5.8vh, 4.2rem);
   display: block;
@@ -505,12 +507,12 @@ button:focus-visible {
 .wake-image-button::before {
   content: "";
   position: absolute;
-  inset: -8px;
+  inset: -16px -22px;
   z-index: 0;
-  border-radius: 3px;
-  background: #aaaaaa;
-  filter: blur(4px);
-  opacity: 0.84;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(210, 210, 202, 0.58) 0 34%, rgba(210, 210, 202, 0.2) 58%, rgba(210, 210, 202, 0) 78%);
+  filter: blur(10px);
+  opacity: 0.82;
   pointer-events: none;
 }
 
@@ -585,7 +587,7 @@ button:focus-visible {
   --detail-image-aspect-ratio: 1.62;
   --mx: 50%;
   --my: 50%;
-  --image-cursor-size: 72px;
+  --image-cursor-size: 112px;
   position: absolute;
   left: calc(50% - 220px);
   top: 50%;
@@ -608,10 +610,12 @@ button:focus-visible {
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  backdrop-filter: blur(4.5px) saturate(0.94);
-  -webkit-backdrop-filter: blur(4.5px) saturate(0.94);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.055) 0 32%, rgba(255, 255, 255, 0.025) 62%, transparent 100%);
-  box-shadow: none;
+  backdrop-filter: blur(7px) saturate(0.96);
+  -webkit-backdrop-filter: blur(7px) saturate(0.96);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.13) 0 28%, rgba(255, 255, 255, 0.055) 56%, rgba(255, 255, 255, 0) 78%);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.16);
+  mask-image: radial-gradient(circle, #000 0 34%, rgba(0, 0, 0, 0.72) 52%, rgba(0, 0, 0, 0.2) 70%, transparent 86%);
+  -webkit-mask-image: radial-gradient(circle, #000 0 34%, rgba(0, 0, 0, 0.72) 52%, rgba(0, 0, 0, 0.2) 70%, transparent 86%);
   transition: opacity 0.14s ease;
 }
 

@@ -85,7 +85,7 @@ type KeywordLayout = {
   driftDuration: number;
   leaveDelay: number;
   enterDelay: number;
-  state: 'entering' | 'leaving';
+  state: 'entering' | 'leaving' | 'visible';
 };
 
 const LEGACY_STORAGE_KEY = 'memory-final-fragment';
@@ -1814,6 +1814,7 @@ function WakeView({ onClose, onConfirm }: { onClose: () => void; onConfirm: (key
   const [words, setWords] = useState<KeywordLayout[]>(() => layoutKeywords(KEYWORDS, true));
   const [refreshing, setRefreshing] = useState(false);
   const [pendingConfirm, setPendingConfirm] = useState<string | null>(null);
+  const refreshingRef = useRef(false);
   const wordRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const panelRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -1829,7 +1830,8 @@ function WakeView({ onClose, onConfirm }: { onClose: () => void; onConfirm: (key
   };
 
   const refresh = () => {
-    if (refreshing || pendingConfirm) return;
+    if (refreshingRef.current || pendingConfirm) return;
+    refreshingRef.current = true;
     setRefreshing(true);
     const leavingWords = words.map((word) => ({
       ...word,
@@ -1842,7 +1844,11 @@ function WakeView({ onClose, onConfirm }: { onClose: () => void; onConfirm: (key
       const nextWords = layoutKeywords(KEYWORDS, true);
       const maxEnterDelay = Math.max(...nextWords.map((word) => word.enterDelay), 0);
       setWords(nextWords);
-      window.setTimeout(() => setRefreshing(false), maxEnterDelay + 680);
+      window.setTimeout(() => {
+        setWords((current) => current.map((word) => ({ ...word, state: 'visible' as const })));
+        setRefreshing(false);
+        refreshingRef.current = false;
+      }, maxEnterDelay + 680);
     }, maxLeaveDelay + 560);
   };
 
@@ -1889,7 +1895,7 @@ function WakeView({ onClose, onConfirm }: { onClose: () => void; onConfirm: (key
               wordRefs.current[word.id] = node;
             }}
             type="button"
-            className={`keyword-chip ${word.text.length > 10 ? 'keyword-chip--long' : ''} ${word.state === 'leaving' ? 'is-leaving' : 'is-entering'}`}
+            className={`keyword-chip ${word.text.length > 10 ? 'keyword-chip--long' : ''} ${word.state === 'leaving' ? 'is-leaving' : ''} ${word.state === 'entering' ? 'is-entering' : ''}`}
             key={word.id}
             disabled={Boolean(pendingConfirm)}
             onClick={(event) => submit(word.text, rectOrigin(event.currentTarget.getBoundingClientRect()))}
@@ -1905,7 +1911,7 @@ function WakeView({ onClose, onConfirm }: { onClose: () => void; onConfirm: (key
               '--drift-duration': `${word.driftDuration}ms`,
               '--leave-delay': `${word.leaveDelay}ms`,
               '--enter-delay': `${word.enterDelay}ms`,
-              animationDelay: word.state === 'leaving' ? `${word.leaveDelay}ms` : `${word.enterDelay}ms`,
+              animationDelay: word.state === 'leaving' ? `${word.leaveDelay}ms` : word.state === 'entering' ? `${word.enterDelay}ms` : '0ms',
               } as React.CSSProperties
             }
           >
