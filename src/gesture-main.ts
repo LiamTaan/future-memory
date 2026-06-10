@@ -87,6 +87,8 @@ const PHOTO_LIFETIME_MS = 20_000;
 const PHOTO_FADE_MS = 1_100;
 const PICK_COOLDOWN_MS = 1_200;
 const PINCH_RELEASE_THRESHOLD = 0.42;
+const HAND_DETECTION_INTERVAL_MS = 42;
+const MAX_HAND_CANVAS_DPR = 1.25;
 
 const gestureRoot = document.querySelector<HTMLElement>('#gesture-root');
 if (!gestureRoot) throw new Error('Missing gesture root');
@@ -233,7 +235,7 @@ function buildModernSources(sources: string[]) {
 }
 
 async function createModernTiles(sources: string[]) {
-  const count = Math.min(11, Math.max(7, sources.length));
+  const count = Math.min(8, Math.max(5, sources.length));
   const sourceAspects = await Promise.all(sources.map((src) => getImageAspect(src)));
   const lanes = [0.18, 0.33, 0.5, 0.67, 0.82];
   const spacing = Math.max(360, window.innerWidth / 3.2);
@@ -363,8 +365,9 @@ async function startCameraGesture() {
     stream = await navigator.mediaDevices.getUserMedia({
       video: {
         facingMode: 'environment',
-        width: { ideal: 1280 },
-        height: { ideal: 720 },
+        width: { ideal: 960 },
+        height: { ideal: 540 },
+        frameRate: { ideal: 24, max: 30 },
       },
       audio: false,
     });
@@ -433,6 +436,7 @@ function cameraErrorMessage(error: unknown) {
 
 function detectHands(landmarker: HandLandmarkerInstance) {
   let lastVideoTime = -1;
+  let lastDetectionAt = 0;
 
   const run = () => {
     if (!state.runningCamera || !video.videoWidth) {
@@ -440,9 +444,11 @@ function detectHands(landmarker: HandLandmarkerInstance) {
       return;
     }
 
-    if (video.currentTime !== lastVideoTime) {
+    const now = performance.now();
+    if (video.currentTime !== lastVideoTime && now - lastDetectionAt >= HAND_DETECTION_INTERVAL_MS) {
       lastVideoTime = video.currentTime;
-      const result = landmarker.detectForVideo(video, performance.now());
+      lastDetectionAt = now;
+      const result = landmarker.detectForVideo(video, now);
       updateHandFromLandmarks(result.landmarks?.[0]);
     }
 
@@ -487,6 +493,12 @@ function updateHandFromLandmarks(landmarks?: Landmark[]) {
 }
 
 function tick(now: number) {
+  if (document.hidden) {
+    state.lastNow = now;
+    requestAnimationFrame(tick);
+    return;
+  }
+
   const dt = Math.min((now - state.lastNow) / 1000, 0.034);
   state.lastNow = now;
 
@@ -513,7 +525,7 @@ function moveModernTiles(dt: number, now: number) {
     }
 
     const scale = lerp(0.88, 1.1, tile.z);
-    const blur = lerp(0.82, 0.08, tile.z);
+    const blur = lerp(0.38, 0.03, tile.z);
     const opacity = lerp(0.68, 0.92, tile.z);
     tile.node.style.width = `${tile.width}px`;
     tile.node.style.height = `${tile.height}px`;
@@ -668,11 +680,10 @@ function pointInPhoto(x: number, y: number, photo: PastPhoto) {
 }
 
 function drawHandLayer(now: number) {
-  resizeHandCanvas();
   handCtx.clearRect(0, 0, handCanvas.width, handCanvas.height);
   if (!hand.active) return;
 
-  const dpr = window.devicePixelRatio || 1;
+  const dpr = handCanvasDpr();
   handCtx.save();
   handCtx.scale(dpr, dpr);
   handCtx.globalAlpha = clamp(hand.confidence, 0, 1);
@@ -700,7 +711,7 @@ function drawHandLayer(now: number) {
 }
 
 function resizeHandCanvas() {
-  const dpr = window.devicePixelRatio || 1;
+  const dpr = handCanvasDpr();
   const width = window.innerWidth;
   const height = window.innerHeight;
   if (handCanvas.width === Math.floor(width * dpr) && handCanvas.height === Math.floor(height * dpr)) return;
@@ -708,6 +719,10 @@ function resizeHandCanvas() {
   handCanvas.height = Math.floor(height * dpr);
   handCanvas.style.width = `${width}px`;
   handCanvas.style.height = `${height}px`;
+}
+
+function handCanvasDpr() {
+  return Math.min(window.devicePixelRatio || 1, MAX_HAND_CANVAS_DPR);
 }
 
 function distance(a: Landmark, b: Landmark) {

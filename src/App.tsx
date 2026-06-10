@@ -101,20 +101,20 @@ const UI = {
 const GLOBAL_MUSIC_SRC = '/assets/audio/global-theme.mp3';
 const GLOBAL_MUSIC_VOLUME = 0.35;
 const DEFAULT_MODERN_IMAGES = ['/assets/new-city/25cd8e17-4eff-4db8-a83c-9e9f1a6cc820.webp', '/assets/new-city/7cfa6337-dfd2-429f-be06-ae37f2dce37f.webp'];
-const HOME_MAX_PHOTO_COUNT = 18;
+const HOME_MAX_PHOTO_COUNT = 14;
 const DEFAULT_PHOTO_ASPECT_RATIO = 1.42;
 const LOADING_TOTAL_MS = 10_000;
 const LOADING_FREEFORM_MS = 8_000;
 const LOADING_REVEAL_MS = 2_000;
 const LOADING_COMPLETE_CROSSFADE_MS = 850;
 const EDITOR_HOME_RETURN_MS = 1_180;
-const MAX_CANVAS_DPR = 1.5;
+const MAX_CANVAS_DPR = 1.25;
 const LOW_CANVAS_DPR = 1;
 const RESULT_IMAGE_CANVAS_WIDTH = 480;
 const LOADING_PARTICLES = {
-  low: 900,
-  medium: 2400,
-  high: 4200,
+  low: 520,
+  medium: 1500,
+  high: 2600,
 };
 const LOADING_MEMORY_TILES = [
   { x: 2, y: 5, w: 14, r: -3.1, blur: 3.4, opacity: 0.17 },
@@ -1111,7 +1111,13 @@ function scoreMemory(item: MemoryItem, key: string, terms: string[]) {
 function useGlobalBreath() {
   useEffect(() => {
     let active = true;
+    let lastPaint = 0;
     const tick = (time: number) => {
+      if (document.hidden || time - lastPaint < 33) {
+        if (active) requestAnimationFrame(tick);
+        return;
+      }
+      lastPaint = time;
       const breath = Math.sin(time / 555) * 0.04;
       document.documentElement.style.setProperty('--breath', breath.toFixed(4));
       document.documentElement.style.setProperty('--breath-scale', (1 + breath).toFixed(4));
@@ -1126,6 +1132,8 @@ function useGlobalBreath() {
 }
 
 function CursorField() {
+  if (performanceTier() === 'low') return null;
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const lag = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
   const target = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
@@ -1135,6 +1143,7 @@ function CursorField() {
     const ctx = canvas?.getContext('2d');
     if (!canvas || !ctx) return;
     let active = true;
+    let lastPaint = 0;
     const resize = () => {
       const dpr = canvasDpr();
       canvas.width = Math.floor(window.innerWidth * dpr);
@@ -1147,7 +1156,12 @@ function CursorField() {
       target.current.x = event.clientX;
       target.current.y = event.clientY;
     };
-    const draw = () => {
+    const draw = (time: number) => {
+      if (document.hidden || time - lastPaint < 33) {
+        if (active) requestAnimationFrame(draw);
+        return;
+      }
+      lastPaint = time;
       lag.current.x += (target.current.x - lag.current.x) * 0.32;
       lag.current.y += (target.current.y - lag.current.y) * 0.32;
       document.documentElement.style.setProperty('--cursor-lag-x', `${lag.current.x}px`);
@@ -1198,6 +1212,7 @@ function HomeView({
   const cameraCurrent = useRef(HOME_INITIAL_CAMERA_DEPTH);
   const cameraVelocity = useRef(0);
   const rafRef = useRef<number | null>(null);
+  const lastCameraPaintRef = useRef(0);
   const rootRef = useRef<HTMLElement>(null);
   const photosRef = useRef(photos);
   const dimmedRef = useRef(dimmed);
@@ -1211,11 +1226,16 @@ function HomeView({
   }, [dimmed]);
 
   useEffect(() => {
-    const tick = () => {
+    const tick = (time: number) => {
+      if (document.hidden || time - lastCameraPaintRef.current < 33) {
+        rafRef.current = requestAnimationFrame(tick);
+        return;
+      }
+      lastCameraPaintRef.current = time;
       const delta = targetDepth.current - cameraCurrent.current;
       cameraVelocity.current = delta * HOME_CAMERA_EASE;
       cameraCurrent.current = Math.abs(delta) < 0.02 ? targetDepth.current : clamp(cameraCurrent.current + cameraVelocity.current, HOME_CAMERA_MIN_Z, HOME_CAMERA_MAX_Z);
-      setCameraDepth(cameraCurrent.current);
+      setCameraDepth((current) => (Math.abs(current - cameraCurrent.current) < 0.4 ? current : cameraCurrent.current));
       rafRef.current = requestAnimationFrame(tick);
     };
     rafRef.current = requestAnimationFrame(tick);
