@@ -52,6 +52,7 @@ type PastPhoto = {
   node: HTMLDivElement;
   state: 'dragging' | 'placed' | 'fading';
   createdAt: number;
+  placedAt: number;
   expiresAt: number;
   sourceIndex: number;
 };
@@ -116,6 +117,17 @@ root.innerHTML = `
     <video class="gesture-camera" data-video playsinline muted></video>
     <div class="gesture-camera-wash" aria-hidden="true"></div>
     <div class="gesture-data-flow" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="gesture-location-data" aria-hidden="true">
+      <span class="gesture-map-title">Memory Map / Shenzhen Archive</span>
+      <span class="gesture-map-node gesture-map-node--nostalgia">南头古城</span>
+      <span class="gesture-map-node gesture-map-node--storage">华强北</span>
+      <span class="gesture-map-node gesture-map-node--forgetting">岗厦</span>
+      <span class="gesture-map-node gesture-map-node--media">蛇口码头</span>
+      <span class="gesture-map-node gesture-map-node--glitch">盐田港</span>
+      <span class="gesture-data-fragment gesture-data-fragment--one">N22.5431 E114.0579 / 1999-06-10 / lost_packet_0x7A3F</span>
+      <span class="gesture-data-fragment gesture-data-fragment--two">010101 MEMORY_FADE / CRC_ERR / archive://sz/old-city</span>
+      <span class="gesture-data-fragment gesture-data-fragment--three">乱码 M4A#7F / 大梅沙 / scanline / frame_20s / null</span>
+    </div>
     <div class="gesture-modern-flow" data-modern-flow aria-hidden="true"></div>
     <div class="gesture-past-layer" data-past-layer></div>
     <canvas class="gesture-hand-canvas" data-hand-canvas></canvas>
@@ -495,6 +507,7 @@ function grabNewPastPhoto(now: number) {
     node: document.createElement('div'),
     state: 'dragging',
     createdAt: now,
+    placedAt: Number.POSITIVE_INFINITY,
     expiresAt: Number.POSITIVE_INFINITY,
     sourceIndex,
   };
@@ -511,6 +524,7 @@ function placeActivePhoto(now: number) {
   if (!photo) return;
 
   photo.state = 'placed';
+  photo.placedAt = now;
   photo.expiresAt = now + PHOTO_LIFETIME_MS;
   photo.node.classList.remove('gesture-past-photo--dragging');
   photo.node.classList.add('gesture-past-photo--placed');
@@ -540,12 +554,14 @@ function updatePastPhotos(now: number) {
     photo.node.style.setProperty('--touch-x', `${localTouchX}%`);
     photo.node.style.setProperty('--touch-y', `${localTouchY}%`);
     if (photo.state === 'placed') {
-      const age = clamp((now - photo.createdAt) / PHOTO_LIFETIME_MS, 0, 1);
-      photo.node.style.setProperty('--placed-opacity', `${lerp(0.58, 0.28, age)}`);
-      photo.node.style.setProperty('--placed-blur', `${lerp(2.1, 5.2, age)}px`);
+      const age = clamp((now - photo.placedAt) / PHOTO_LIFETIME_MS, 0, 1);
+      photo.node.style.setProperty('--placed-opacity', `${lerp(0.72, 0.16, age)}`);
+      photo.node.style.setProperty('--placed-blur', `${lerp(0.4, 8.5, easeInCubic(age))}px`);
+      photo.node.style.setProperty('--placed-decay', `${age}`);
     } else {
       photo.node.style.removeProperty('--placed-opacity');
       photo.node.style.removeProperty('--placed-blur');
+      photo.node.style.removeProperty('--placed-decay');
     }
     photo.node.style.transform = `translate3d(${photo.x}px, ${photo.y}px, 0) translate(-50%, -50%) rotate(${photo.rotation}deg)`;
   }
@@ -640,6 +656,10 @@ function clamp(value: number, min: number, max: number) {
 
 function lerp(a: number, b: number, t: number) {
   return a + (b - a) * t;
+}
+
+function easeInCubic(value: number) {
+  return value * value * value;
 }
 
 function escapeHtml(value: string) {
