@@ -89,6 +89,7 @@ const PICK_COOLDOWN_MS = 1_200;
 const PINCH_RELEASE_THRESHOLD = 0.42;
 const HAND_DETECTION_INTERVAL_MS = 42;
 const MAX_HAND_CANVAS_DPR = 1.25;
+const PREFERRED_CAMERA_LABELS = ['XWF 1080P PC Camera'];
 
 const gestureRoot = document.querySelector<HTMLElement>('#gesture-root');
 if (!gestureRoot) throw new Error('Missing gesture root');
@@ -362,15 +363,7 @@ async function startCameraGesture() {
   let stream: MediaStream | null = null;
 
   try {
-    stream = await navigator.mediaDevices.getUserMedia({
-      video: {
-        facingMode: 'environment',
-        width: { ideal: 960 },
-        height: { ideal: 540 },
-        frameRate: { ideal: 24, max: 30 },
-      },
-      audio: false,
-    });
+    stream = await openPreferredCameraStream();
     state.cameraStream = stream;
     video.srcObject = stream;
     await video.play();
@@ -389,6 +382,75 @@ async function startCameraGesture() {
     state.cameraStream = null;
     statusNode.textContent = cameraErrorMessage(error);
   }
+}
+
+async function openPreferredCameraStream() {
+  const defaultStream = await requestCameraStream();
+  const preferredCamera = await findPreferredCamera();
+
+  if (!preferredCamera?.deviceId) return defaultStream;
+
+  const activeDeviceId = defaultStream.getVideoTracks()[0]?.getSettings().deviceId;
+  if (activeDeviceId === preferredCamera.deviceId) {
+    console.info(`[gesture] using preferred camera: ${preferredCamera.label}`);
+    return defaultStream;
+  }
+
+  try {
+    const preferredStream = await requestCameraStream(preferredCamera.deviceId);
+    stopCameraStream(defaultStream);
+    console.info(`[gesture] switched to preferred camera: ${preferredCamera.label}`);
+    return preferredStream;
+  } catch (error) {
+    console.warn('[gesture] preferred camera failed, falling back to default camera.', error);
+    return defaultStream;
+  }
+}
+
+function requestCameraStream(deviceId?: string) {
+  return navigator.mediaDevices.getUserMedia({
+    video: cameraVideoConstraints(deviceId),
+    audio: false,
+  });
+}
+
+function cameraVideoConstraints(deviceId?: string): MediaTrackConstraints {
+  const constraints: MediaTrackConstraints = {
+    width: { ideal: 960 },
+    height: { ideal: 540 },
+    frameRate: { ideal: 24, max: 30 },
+  };
+
+  if (deviceId) {
+    constraints.deviceId = { exact: deviceId };
+  } else {
+    constraints.facingMode = { ideal: 'environment' };
+  }
+
+  return constraints;
+}
+
+async function findPreferredCamera() {
+  if (!navigator.mediaDevices.enumerateDevices) return null;
+
+  const devices = await navigator.mediaDevices.enumerateDevices();
+  const cameras = devices.filter((device) => device.kind === 'videoinput');
+  const preferredCamera = cameras.find((camera) => isPreferredCameraLabel(camera.label));
+
+  if (!preferredCamera) {
+    console.info('[gesture] available cameras:', cameras.map((camera) => camera.label || camera.deviceId));
+  }
+
+  return preferredCamera || null;
+}
+
+function isPreferredCameraLabel(label: string) {
+  const normalizedLabel = normalizeCameraLabel(label);
+  return PREFERRED_CAMERA_LABELS.some((preferredLabel) => normalizedLabel.includes(normalizeCameraLabel(preferredLabel)));
+}
+
+function normalizeCameraLabel(label: string) {
+  return label.toLowerCase().replace(/\s+/g, ' ').trim();
 }
 
 async function createHandLandmarker() {
